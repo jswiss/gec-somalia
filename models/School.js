@@ -10,7 +10,7 @@ const schoolSchema = new mongoose.Schema({
     required: 'Please enter a school name', // defaults to true, and this acts as the error msg
   },
   slug: String,
-  gecActivities: [String],
+  // project activities here
   tags: [String],
   // TODO: create an enum list for allowable tags
   created: {
@@ -31,10 +31,17 @@ const schoolSchema = new mongoose.Schema({
   },
   headTeacher: String, //TODO: Edit this so it's a ref to Teacher.js
   teachers: [{
-    type: String,
-    // TODO: another ref to Teacher.js
+    type: mongoose.Schema.ObjectId,
+    ref: 'Teacher'
   }],
-  students: [String], // TODO: ref to Student.js
+  classes: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Class',
+  }],
+  students: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Student',
+  }],
   photo: String,
   author: {
     type: mongoose.Schema.ObjectId,
