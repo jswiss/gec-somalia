@@ -22,6 +22,10 @@ const classSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'Teacher',
   },
+  timestamps: [{
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+  }],
 });
 
 // Pre-save hook in MongoDB to auto create a slug

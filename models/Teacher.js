@@ -10,6 +10,12 @@ const teacherSchema = new mongoose.Schema({
     lowercase: true,
     required: true,
   },
+  headTeacher: {
+    type: Boolean,
+    required: true,
+  },
+  // Checkboxes for this
+  subjects: [String],
   slug: String,
   school: {
     type: mongoose.Schema.ObjectId,
@@ -37,6 +43,10 @@ const teacherSchema = new mongoose.Schema({
   },
   // put project support tags here
   tags: [String],
+  timestamps: [{
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+  }],
 });
 
 // Pre-save hook in MongoDB to auto create a slug

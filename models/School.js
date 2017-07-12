@@ -47,7 +47,11 @@ const schoolSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'User',
     required: 'You must supply an author',
-  }
+  },
+  timestamps: [{
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+  }],
 });
 
 // MongoDB indexing always happens in Schema

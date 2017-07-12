@@ -58,6 +58,10 @@ const studentSchema = new mongoose.Schema({
     date: Date,
     amount: Number,
   }],
+  timestamps: [{
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+  }],
 });
 
 // Pre-save hook in MongoDB to auto create a slug

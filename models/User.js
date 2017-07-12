@@ -28,8 +28,18 @@ const userSchema = new Schema({
   },
   resetPasswordToken: String,
   resetPasswordExpires: Date,
-  organisation: { type: String, enum: ['GEC', 'SOMGEP', 'EGEP', 'Government'] },
-  role: { type: String, enum: ['admin', 'manager', 'editor', 'viewer'] }
+  organisation: {
+    type: String,
+    enum: ['GEC', 'SOMGEP', 'EGEP', 'Government'],
+  },
+  role: {
+    type: String,
+    enum: ['admin', 'manager', 'editor', 'viewer'],
+  },
+    timestamps: [{
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+  }],
 });
 
 userSchema.virtual('gravatar').get(function() {
