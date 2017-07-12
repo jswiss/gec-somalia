@@ -6,6 +6,7 @@ const md5 = require('md5');
 const validator = require('validator');
 const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
+const shortId = require('shortid');
 
 const userSchema = new Schema({
   email: {
@@ -15,6 +16,10 @@ const userSchema = new Schema({
     trim: true,
     validate: [validator.isEmail, 'Invalid email address'], // how to validate, and what error to throw if not validation
     required: 'Please supply an email address'
+  },
+  shortId: {
+    type: String,
+    'default': shortId.generate
   },
   name: {
     type: String,
