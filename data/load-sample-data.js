@@ -13,9 +13,11 @@ const School = require('../models/School');
 // const Class = require('../models/Class');
 
 
-const stores = JSON.parse(fs.readFileSync(__dirname + '/stores.json', 'utf-8'));
-// const reviews = JSON.parse(fs.readFileSync(__dirname + '/reviews.json', 'utf-8'));
-const users = JSON.parse(fs.readFileSync(__dirname + '/users.json', 'utf-8'));
+const schools = JSON.parse(fs.readFileSync(__dirname + '/school-data.json', 'utf-8'));
+// const students = JSON.parse(fs.readFileSync(__dirname + '/student-data.json', 'utf-8'));
+// const users = JSON.parse(fs.readFileSync(__dirname + '/user-data.json', 'utf-8'));
+// const classes = JSON.parse(fs.readFileSync(__dirname + '/class-data.json', 'utf-8'));
+// const teachers = JSON.parse(fs.readFileSync(__dirname + '/teacher-data.json', 'utf-8'));
 
 async function deleteData() {
   console.log('😢😢 Goodbye Data...');

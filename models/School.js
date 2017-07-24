@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // allows us to make url-friendly names
 const slug = require('slugs');
+const timestamps = require('mongoose-timestamp');
 
 const schoolSchema = new mongoose.Schema({
   name: {
@@ -16,10 +17,10 @@ const schoolSchema = new mongoose.Schema({
   },
   slug: String,
   rag: [{
-    Date: Date,
+    date: Date,
     rating: {
       type: String,
-      enum: ['Red', 'Amber', 'Green'],
+      enum: ['red', 'amber', 'green'],
     },
   }],
   // project activities here
@@ -32,30 +33,39 @@ const schoolSchema = new mongoose.Schema({
   location: {
     type: {
       type: String,
-      default: 'Point'
+      default: 'Point',
     },
-    latitude: {
-      type: Number,
-      required: 'You must provide latitude',
+    village: {
+      type: String,
+      trim: true,
+      required: 'You must provide a village!',
     },
-    longitude: {
-      type: Number,
-      required: 'You must provide longitude',
+    district: {
+      type: String,
+      trim: true,
+      required: 'You must provide a district!',
     },
-    // coordinates: [
-    //   {
-    //     type: Number,
-    //     required: 'You must provide coordinates!'
-    //   }
-    // ],
+    region: {
+      type: String,
+      trim: true,
+      required: 'You must provide a region!',
+    },
+    state: {
+      type: String,
+      trim: true,
+      required: 'You must provide a state!',
+    },
+    coordinates: [
+      {
+        type: Number,
+        required: 'You must provide coordinates!',
+      }
+    ],
   },
-  
   photo: String,
-  timestamps: [{
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-  }],
 });
+
+schoolSchema.plugin(timestamps);
 
 // MongoDB indexing always happens in Schema
 schoolSchema.index({
