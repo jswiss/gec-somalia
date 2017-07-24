@@ -10,22 +10,8 @@ const studentSchema = new mongoose.Schema({
     lowercase: true,
     required: true,
   },
+  initials: String,
   slug: String,
-  school: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'School',
-    required: true,
-  },
-  class: {
-    type: mongo.Schema.ObjectId,
-    ref: 'Class',
-    required: true,
-  },
-  teacher: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'Teacher',
-    required: true,
-  },
   gender: {
     type: String,
     trim: true,
@@ -43,20 +29,37 @@ const studentSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   },
-  homeVillage: {
-    type: String,
-    trim: true,
-    lowercase: true,
-    required: true,
-  },
-  attendance: [{
-    date: Date,
-    attended: Boolean,
-  }],
-  bursarySupport: Boolean,
-  paymentDates: [{
-    date: Date,
-    amount: Number,
+  dynamic: [{
+    timestamps: [{
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+    }],
+    year: { type: Number, required: true, min: 2017, max: 2020 },
+    school: [{
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true,
+    }],
+    class: [{
+      type: mongo.Schema.ObjectId,
+      ref: 'Class',
+      required: true,
+    }],
+    teacher: [{
+      // link up teacher to class to teacher?
+    }],
+    bursary: {
+      supported: { type: Boolean, required: true },
+      paymentDetails: [{
+        date: Date,
+        amount: Number,
+      }],
+    },
+    attendance: {
+      date: Date,
+      attended: Boolean,
+    },
   }],
   timestamps: [{
     createdAt: 'created_at',
@@ -71,6 +74,7 @@ studentSchema.pre('save', async function (next) {
     return; // stop this function from running
   }
   // this requires a real function
+  this.initials = this.name.match(/\b\w/g).join('').toUpperCase();
   this.slug = slug(`${this.school}_${this.class}_${this.initials}`);
   // check if the slug is unique
   const slugRegex = new RegExp(`^(${this.slug})((-[0-9]*$)?)`, 'i');

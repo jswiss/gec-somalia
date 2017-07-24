@@ -19,7 +19,7 @@ const userSchema = new Schema({
   },
   shortId: {
     type: String,
-    'default': shortId.generate
+    'default': shortId.generate,
   },
   name: {
     type: String,

@@ -9,7 +9,19 @@ const schoolSchema = new mongoose.Schema({
     trim: true,
     required: 'Please enter a school name', // defaults to true, and this acts as the error msg
   },
+  code: {
+    type: String,
+    trim: true,
+    required: 'Every school needs a unique code!',
+  },
   slug: String,
+  rag: [{
+    Date: Date,
+    rating: {
+      type: String,
+      enum: ['Red', 'Amber', 'Green'],
+    },
+  }],
   // project activities here
   tags: [String],
   // TODO: create an enum list for allowable tags
@@ -22,32 +34,23 @@ const schoolSchema = new mongoose.Schema({
       type: String,
       default: 'Point'
     },
-    coordinates: [
-      {
-        type: Number,
-        required: 'You must provide coordinates!'
-      }
-    ],
+    latitude: {
+      type: Number,
+      required: 'You must provide latitude',
+    },
+    longitude: {
+      type: Number,
+      required: 'You must provide longitude',
+    },
+    // coordinates: [
+    //   {
+    //     type: Number,
+    //     required: 'You must provide coordinates!'
+    //   }
+    // ],
   },
-  headTeacher: String, //TODO: Edit this so it's a ref to Teacher.js
-  teachers: [{
-    type: mongoose.Schema.ObjectId,
-    ref: 'Teacher'
-  }],
-  classes: [{
-    type: mongoose.Schema.ObjectId,
-    ref: 'Class',
-  }],
-  students: [{
-    type: mongoose.Schema.ObjectId,
-    ref: 'Student',
-  }],
+  
   photo: String,
-  author: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User',
-    required: 'You must supply an author',
-  },
   timestamps: [{
     createdAt: 'created_at',
     updatedAt: 'updated_at',

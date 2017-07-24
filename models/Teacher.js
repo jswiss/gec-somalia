@@ -17,6 +17,17 @@ const teacherSchema = new mongoose.Schema({
   // Checkboxes for this
   subjects: [String],
   slug: String,
+  dynamic: [{
+    timestamps: [{
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+    }],
+    year: { type: Number, required: true },
+    attendance: [{
+      date: Date,
+      attended: Boolean,
+    }],
+  }],
   school: {
     type: mongoose.Schema.ObjectId,
     ref: 'School',
