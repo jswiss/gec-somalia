@@ -18,15 +18,6 @@ const multerOptions = {
   }
 };
 
-exports.homePage = (req, res) => {
-  console.log(req.name);
-  req.flash('error', 'something happened!');
-  req.flash('info', 'something happened!');
-  req.flash('warning', 'something happened!');
-  req.flash('success', 'something happened!');
-  res.render('index');
-};
-
 exports.upload = multer(multerOptions).single('photo');
 
 exports.resize = async (req, res, next) => {
@@ -44,13 +35,64 @@ exports.resize = async (req, res, next) => {
   next();
 }
 
-exports.getSummary = async (req, res) => {
+exports.getSchools = async (req, res) => {
   // TODO: Query the db for a list of all stores
   const schools = await School.find();
-  console.log(schools);
   // res.json(schools);
-  res.render('summary', {
-    title: 'Summary',
+  res.render('schools', {
+    title: 'Schools',
     schools
   });
+};
+
+exports.getSchoolBySlug = async (req, res, next) => {
+  const school = await School.findOne({ slug: req.params.slug });
+  // const school = await findOne({ slug: req.params.slug }).populate('classes');
+  // res.json(school);
+  if (!school) {
+    next();
+    return;
+  }
+  res.render('school', { school, title: school.name });
+};
+
+exports.mapSchools = async (req, res) => {
+  const coordinates = [req.query.lng, req.query.lat].map(parseFloat);
+  const q = {
+    location: {
+      $near: {
+        $geometry: {
+          type: 'Point',
+          coordinates: coordinates,
+        },
+        $maxDistance: 1000000 // 1000 km
+      }
+    }
+  };
+  const schools = await School.find(q).select('slug name location rag photo project');
+};
+
+// API search
+exports.searchSchools = async (req, res) => {
+  const schools = await School
+    .find({
+      // $text is a MongoDB operator that searches all fields indexed as text
+      $text: {
+        $search: req.query.q
+      }
+    }, {
+      //projecting, i.e. creating a new field, score, made up of metadata
+      score: { $meta:'textScore' } // textScore is the only meta field in MongoDB so far
+    })
+    // we want to sort by higher textScore
+    .sort({ 
+      score: { $meta: 'textScore' }
+    })
+    // limit to only five results
+    .limit(10);
+  res.json(schools);
+};
+
+exports.mapPage = (req, res) => {
+  res.render('map', { title: 'Map' });
 };

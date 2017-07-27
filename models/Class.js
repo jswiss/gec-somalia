@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // allows us to make url-friendly names
 const slug = require('slugs');
+const timestamps = require('mongoose-timestamp');
 
 const classSchema = new mongoose.Schema({
   code: {
@@ -9,17 +10,14 @@ const classSchema = new mongoose.Schema({
     trim: true,
     enum: [],
   },
-  slug: String,
   school: {
     type: mongoose.Schema.ObjectId,
     ref: 'School',
     required: 'Every class must have a school!',
   },
-  timestamps: [{
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-  }],
 });
+
+classSchema.plugin(timestamps);
 
 // Pre-save hook in MongoDB to auto create a slug
 classSchema.pre('save', async function (next) {

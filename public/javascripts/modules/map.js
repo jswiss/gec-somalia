@@ -2,11 +2,11 @@ import axios from 'axios';
 import { $ } from './bling';
 
 const mapOptions = {
-  center: { lat: 7.8457807, lng: 45.1235531, },
+  center: { lat: 9.757857, lng: 47.805819, },
   zoom: 7,
 };
 
-function loadPlaces(map, lat = 7.8457807, lng = 45.1235531) {
+function loadPlaces(map, lat = 9.757857, lng = 47.805819) {
   axios.get(`/api/v1/schools/near?lat=${lat}&lng=${lng}`)
     .then(res => {
       const schools = res.data;
@@ -36,9 +36,9 @@ function loadPlaces(map, lat = 7.8457807, lng = 45.1235531) {
       markers.forEach(marker => marker.addListener('click', function() {
         const html = `
           <div class="popup">
-            <a href="/store/${this.school.slug}">
-              <img src="/uploads/${this.school.photo || 'store.png'}" alt="${this.school.name}" />
-              <p><strong>${this.school.name}</strong> -  ${this.school.location.address}</p>
+            <a href="/school/${this.school.slug}">
+              <img src="/uploads/${this.school.photo || 'school.png'}" alt="${this.school.name}" />
+              <p><strong>${this.school.name}</strong> -  ${this.school.location.village}</p>
             </a>
           </div>
         `;

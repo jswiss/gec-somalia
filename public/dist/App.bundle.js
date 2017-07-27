@@ -1004,13 +1004,13 @@ var _bling = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapOptions = {
-  center: { lat: 7.8457807, lng: 45.1235531 },
+  center: { lat: 9.757857, lng: 47.805819 },
   zoom: 7
 };
 
 function loadPlaces(map) {
-  var lat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 7.8457807;
-  var lng = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 45.1235531;
+  var lat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 9.757857;
+  var lng = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 47.805819;
 
   _axios2.default.get('/api/v1/schools/near?lat=' + lat + '&lng=' + lng).then(function (res) {
     var schools = res.data;
@@ -1042,7 +1042,7 @@ function loadPlaces(map) {
     // When someone clicks on a marker, show the details of that place
     markers.forEach(function (marker) {
       return marker.addListener('click', function () {
-        var html = '\n          <div class="popup">\n            <a href="/store/' + this.school.slug + '">\n              <img src="/uploads/' + (this.school.photo || 'store.png') + '" alt="' + this.school.name + '" />\n              <p><strong>' + this.school.name + '</strong> -  ' + this.school.location.address + '</p>\n            </a>\n          </div>\n        ';
+        var html = '\n          <div class="popup">\n            <a href="/school/' + this.school.slug + '">\n              <img src="/uploads/' + (this.school.photo || 'school.png') + '" alt="' + this.school.name + '" />\n              <p><strong>' + this.school.name + '</strong> -  ' + this.school.location.village + '</p>\n            </a>\n          </div>\n        ';
         infoWindow.setContent(html);
         infoWindow.open(map, this);
       });

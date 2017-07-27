@@ -1,0 +1,10 @@
+extends layout
+
+include mixins/_schoolCard
+
+block content
+  .inner
+    h2= title
+    .schools
+      each school in schools
+        +schoolCard(school)

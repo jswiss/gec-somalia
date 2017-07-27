@@ -16,6 +16,11 @@ const schoolSchema = new mongoose.Schema({
     required: 'Every school needs a unique code!',
   },
   slug: String,
+  project: {
+    type: String,
+    required: 'Every school must have a project',
+    enum: ['SOMGEP', 'EGEP'],
+  },
   rag: [{
     date: Date,
     rating: {
@@ -63,6 +68,10 @@ const schoolSchema = new mongoose.Schema({
     ],
   },
   photo: String,
+},{
+    // makes virtuals accessible as JSON or objects
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
 });
 
 schoolSchema.plugin(timestamps);
@@ -70,13 +79,20 @@ schoolSchema.plugin(timestamps);
 // MongoDB indexing always happens in Schema
 schoolSchema.index({
   name: 'text', // we tell MongoDB what we'd like to index fields as. in this case, 'text'
-  // location: '2dsphere'
+  project: 'text',
+  rag: 'text',
+  
+  // rag: 'text',
+  // 'location.village': 'text',
+  // 'location.district': 'text',
+  // 'location.region': 'text',
+  // 'location.state': 'text',
 });
 
 // index location
 schoolSchema.index({
   location: '2dsphere'
-});  
+});
 
 // Pre-save hook in MongoDB to auto create a slug
 schoolSchema.pre('save', async function (next) {

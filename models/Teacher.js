@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // allows us to make url-friendly names
 const slug = require('slugs');
+const timestamps = require('mongoose-timestamp');
 
 const teacherSchema = new mongoose.Schema({
   name: {
@@ -18,10 +19,6 @@ const teacherSchema = new mongoose.Schema({
   subjects: [String],
   slug: String,
   dynamic: [{
-    timestamps: [{
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-    }],
     year: { type: Number, required: true },
     attendance: [{
       date: Date,
@@ -34,7 +31,7 @@ const teacherSchema = new mongoose.Schema({
     required: true,
   },
   class: {
-    type: mongo.Schema.ObjectId,
+    type: mongoose.Schema.ObjectId,
     ref: 'Class',
     required: true,
   },
@@ -54,11 +51,9 @@ const teacherSchema = new mongoose.Schema({
   },
   // put project support tags here
   tags: [String],
-  timestamps: [{
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-  }],
 });
+
+teacherSchema.plugin(timestamps);
 
 // Pre-save hook in MongoDB to auto create a slug
 teacherSchema.pre('save', async function (next) {

@@ -7,6 +7,7 @@ const validator = require('validator');
 const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
 const shortId = require('shortid');
+const timestamps = require('mongoose-timestamp');
 
 const userSchema = new Schema({
   email: {
@@ -36,11 +37,9 @@ const userSchema = new Schema({
     type: String,
     enum: ['admin', 'manager', 'editor', 'viewer'],
   },
-    timestamps: [{
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-  }],
 });
+
+userSchema.plugin(timestamps);
 
 userSchema.virtual('gravatar').get(function() {
   // using a proper function to access this!

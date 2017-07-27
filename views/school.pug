@@ -1,0 +1,32 @@
+extends layout
+
+//- include mixins/_reviewForm
+//- include mixins/_review
+
+block content
+  //- pre= h.dump(school)
+  .single
+    .single__hero
+      img.single__image(src=`/uploads/${school.photo || 'school.png'}`)
+      h2.title.title--single
+        a(href=`/schools/${school.slug}`) #{school.name}
+
+  .single__details.inner
+    img.single__map(src=h.staticMap(school.location.coordinates))
+    p.single__location= school.location.village
+
+    if school.tags
+      ul.tags
+        each tag in school.tags
+          li.tag
+            a.tag__link(href=`/tags/${tag}`)
+              span.tag__text #{tag}
+    
+    //- if user
+    //-   +reviewForm(school)
+
+    //- if school.reviews
+    //-   .reviews
+    //-     each r in school.reviews
+    //-       .review
+    //-         +review(r)
