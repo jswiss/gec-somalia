@@ -1,10 +1,96 @@
-[{"slug":"torp-conroy-and-douglas", "project":"SOMGEP", "name":"Torp, Conroy and Douglas","code":"TCaD","rag":[{"date":"8/9/2017","rating":"red"},{"date":"9/23/2017","rating":"green"}],"location":{"village":"Puce","district":"Lincoln","region":"Town Car","state":"Nanmuping","coordinates":[45.768477,10.42068046], "type": "Point"}},
-{"slug":"fay-bailey-and-pollich", "project":"SOMGEP","name":"Fay, Bailey and Pollich","code":"FBaP","rag":[{"date":"10/10/2017","rating":"amber"},{"date":"8/11/2017","rating":"amber"}],"location":{"village":"Aquamarine","district":"Lotus","region":"Elan","state":"Kihancha","coordinates":[45.868477,9.52068046], "type": "Point"}},
-{"slug":"ondricka-and-sons", "project":"SOMGEP","name":"Ondricka and Sons","code":"OaS","rag":[{"date":"8/18/2017","rating":"amber"}],"location":{"village":"Turquoise","district":"Lincoln","region":"MKX","state":"Debar","coordinates":[45.368477,8.72068046], "type": "Point"}},
-{"slug": "will-hartmann", "project":"SOMGEP","name":"Will-Hartmann","code":"W","rag":[{"date":"7/26/2017","rating":"amber"},{"date":"8/19/2017","rating":"green"}],"location":{"village":"Turquoise","district":"Rolls-Royce","region":"Ghost","state":"Alta Gracia","coordinates":[44.668477,9.52068046], "type": "Point"}},
-{"slug":"keebler-tillman", "project":"SOMGEP","name":"Keebler-Tillman","code":"K","rag":[{"date":"10/23/2017","rating":"green"},{"date":"9/28/2017","rating":"green"},{"date":"10/5/2017","rating":"amber"},{"date":"8/3/2017","rating":"red"}],"location":{"village":"Aquamarine","district":"Pontiac","region":"Sunbird","state":"Starobin","coordinates":[42.868477,9.795833], "type": "Point"}},
-{"slug":"reichel-williamson-and-hand", "project":"EGEP", "name":"Reichel, Williamson and Hand","code":"RWaH","rag":[{"date":"10/15/2017","rating":"green"},{"date":"8/27/2017","rating":"amber"}],"location":{"village":"Purple","district":"Bentley","region":"Continental GTC","state":"Mekarjaya","coordinates":[47.538477,9.009876], "type": "Point"}},
-{"slug":"goldner-franecki", "project":"EGEP", "name":"Goldner-Franecki","code":"G","rag":[{"date":"10/13/2017","rating":"amber"},{"date":"8/19/2017","rating":"green"}],"location":{"village":"Aquamarine","district":"Dodge","region":"Intrepid","state":"Tominian","coordinates":[45.333432,11.674532], "type": "Point"}},
-{"slug":"predovic-llc","project":"EGEP", "name":"Predovic LLC","code":"PL","rag":[{"date":"10/16/2017","rating":"green"},{"date":"10/22/2017","rating":"green"},{"date":"8/18/2017","rating":"green"}],"location":{"village":"Khaki","district":"Mercedes-Benz","region":"GL-Class","state":"Oropesa","coordinates":[44.563287,9.980081], "type": "Point"}},
-{"slug":"beatty-rempel", "project":"EGEP", "name":"Beatty-Rempel","code":"B","rag":[{"date":"8/23/2017","rating":"red"}],"location":{"village":"Turquoise","district":"Mazda","region":"MX-5","state":"Tuqiao","coordinates":[46.490721,10.543212], "type": "Point"}},
-{"slug":"pollich-friesen-and-stoltenberg", "project":"EGEP", "name":"Pollich, Friesen and Stoltenberg","code":"PFaS","rag":[{"date":"9/16/2017","rating":"amber"},{"date":"9/29/2017","rating":"red"},{"date":"9/10/2017","rating":"amber"}],"location":{"village":"Maroon","district":"Land Rover","region":"Range Rover","state":"Remas","coordinates":[44.981234,9.098705], "type": "Point"}}]
+[
+  {
+    "_id": "5979a4a0fc13ae393900000a",
+    "slug": "torp-conroy-and-douglas",
+    "project": "SOMGEP",
+    "name": "Torp, Conroy and Douglas",
+    "code": "TCaD",
+    "rag": [
+      { "date": "8/9/2017", "rating": "red" },
+      { "date": "9/23/2017", "rating": "green" }
+    ],
+    "location": {
+      "village": "Puce",
+      "district": "Lincoln",
+      "region": "Town Car",
+      "state": "Nanmuping",
+      "coordinates": [45.768477, 10.42068046],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": "5979a4a0fc13ae393900000b",
+    "slug": "fay-bailey-and-pollich",
+    "project": "SOMGEP",
+    "name": "Fay, Bailey and Pollich",
+    "code": "FBaP",
+    "rag": [
+      { "date": "10/10/2017", "rating": "amber" },
+      { "date": "8/11/2017", "rating": "amber" }
+    ],
+    "location": {
+      "village": "Aquamarine",
+      "district": "Lotus",
+      "region": "Elan",
+      "state": "Kihancha",
+      "coordinates": [45.868477, 9.52068046],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": "5979a4a0fc13ae393900000c",
+    "slug": "ondricka-and-sons",
+    "project": "SOMGEP",
+    "name": "Ondricka and Sons",
+    "code": "OaS",
+    "rag": [{ "date": "8/18/2017", "rating": "amber" }],
+    "location": {
+      "village": "Turquoise",
+      "district": "Lincoln",
+      "region": "MKX",
+      "state": "Debar",
+      "coordinates": [45.368477, 8.72068046],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": "5979a4a0fc13ae393900000d",
+    "slug": "will-hartmann",
+    "project": "SOMGEP",
+    "name": "Will-Hartmann",
+    "code": "W",
+    "rag": [
+      { "date": "7/26/2017", "rating": "amber" },
+      { "date": "8/19/2017", "rating": "green" }
+    ],
+    "location": {
+      "village": "Turquoise",
+      "district": "Rolls-Royce",
+      "region": "Ghost",
+      "state": "Alta Gracia",
+      "coordinates": [44.668477, 9.52068046],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": "5979a4a0fc13ae393900000e",
+    "slug": "keebler-tillman",
+    "project": "SOMGEP",
+    "name": "Keebler-Tillman",
+    "code": "K",
+    "rag": [
+      { "date": "10/23/2017", "rating": "green" },
+      { "date": "9/28/2017", "rating": "green" },
+      { "date": "10/5/2017", "rating": "amber" },
+      { "date": "8/3/2017", "rating": "red" }
+    ],
+    "location": {
+      "village": "Aquamarine",
+      "district": "Pontiac",
+      "region": "Sunbird",
+      "state": "Starobin",
+      "coordinates": [42.868477, 9.795833],
+      "type": "Point"
+    }
+  }
+]

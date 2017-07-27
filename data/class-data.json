@@ -1,0 +1,128 @@
+[
+  {
+    "_id": "5979a61ffc13ae3939000012",
+    "level": "s1",
+    "code": "s1-0",
+    "school": "5979a4a0fc13ae393900000a"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000014",
+    "level": "s4",
+    "code": "s4-0",
+    "school": "5979a4a0fc13ae393900000a"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000016",
+    "level": "s3",
+    "code": "s3-0",
+    "school": "5979a4a0fc13ae393900000a"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000018",
+    "level": "s4",
+    "code": "s4-3",
+    "school": "5979a4a0fc13ae393900000b"
+  },
+  {
+    "_id": "5979a61ffc13ae393900001a",
+    "level": "s4",
+    "code": "s4-0",
+    "school": "5979a4a0fc13ae393900000b"
+  },
+  {
+    "_id": "5979a61ffc13ae393900001c",
+    "level": "s4",
+    "code": "s4-2",
+    "school": "5979a4a0fc13ae393900000b"
+  },
+  {
+    "_id": "5979a61ffc13ae393900001e",
+    "level": "s4",
+    "code": "s4-0",
+    "school": "5979a4a0fc13ae393900000b"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000020",
+    "level": "s4",
+    "code": "s4-1",
+    "school": "5979a4a0fc13ae393900000b"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000022",
+    "level": "s4",
+    "code": "s4-2",
+    "school": "5979a4a0fc13ae393900000c"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000024",
+    "level": "s3",
+    "code": "s3-0",
+    "school": "5979a4a0fc13ae393900000c"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000026",
+    "level": "s4",
+    "code": "s4-0",
+    "school": "5979a4a0fc13ae393900000c"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000028",
+    "level": "s4",
+    "code": "s4-1",
+    "school": "5979a4a0fc13ae393900000c"
+  },
+  {
+    "_id": "5979a61ffc13ae393900002a",
+    "level": "s2",
+    "code": "s2-0",
+    "school": "5979a4a0fc13ae393900000d"
+  },
+  {
+    "_id": "5979a61ffc13ae393900002c",
+    "level": "s4",
+    "code": "s4-0",
+    "school": "5979a4a0fc13ae393900000d"
+  },
+  {
+    "_id": "5979a61ffc13ae393900002e",
+    "level": "p7",
+    "code": "p7-0",
+    "school": "5979a4a0fc13ae393900000e"
+  },
+  {
+    "_id": "5979a9bcfc13ae418d000028",
+    "level": "p8",
+    "code": "p8-0",
+    "school": "5979a4a0fc13ae393900000e"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000030",
+    "level": "p5",
+    "code": "p6-0",
+    "school": "5979a4a0fc13ae393900000e"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000032",
+    "level": "p4",
+    "code": "p4-1",
+    "school": "5979a4a0fc13ae393900000e"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000034",
+    "level": "p3",
+    "code": "p3-0",
+    "school": "5979a4a0fc13ae393900000e"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000036",
+    "level": "p1",
+    "code": "p1-0",
+    "school": "5979a4a0fc13ae393900000e"
+  },
+  {
+    "_id": "5979a61ffc13ae3939000038",
+    "level": "p2",
+    "code": "p2-0",
+    "school": "5979a4a0fc13ae393900000e"
+  }
+]
