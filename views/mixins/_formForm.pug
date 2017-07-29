@@ -1,0 +1,8 @@
+mixin formForm(school)
+  form(action=`/forms/${school._id}` method="POST")
+    //- pre= h.dump(form)
+    label(for="level") Level
+    input(type="text" name="level" value=form.level)
+    label(for="code") Code
+    input(type="text" name="code" value=form.code)
+      input(type="submit" value="Save →" class="button")
