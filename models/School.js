@@ -89,12 +89,10 @@ schoolSchema.index({
 	name: 'text', // we tell MongoDB what we'd like to index fields as. in this case, 'text'
 	project: 'text',
 	rag: 'text',
+});
 
-	// rag: 'text',
-	// 'location.village': 'text',
-	// 'location.district': 'text',
-	// 'location.region': 'text',
-	// 'location.state': 'text',
+schoolSchema.index({
+'location.village': 'text',
 });
 
 // index location
