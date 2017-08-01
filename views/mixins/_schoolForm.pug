@@ -10,12 +10,19 @@ mixin schoolForm(school = {})
     select(type="select" name="project" value=school.project)
       option SOMGEP
       option EGEP
-    label(for="rag") RAG Rating
-    select(type="select" name="rag" value=school.rag.rating)
-      //- TODO: Add image here
-      option Red
-      option Amber
-      option Green
+    - const ratings = ['Red', 'Amber', 'Green']
+    - const rag = school.rag || []
+    ul.rag
+      each rating in ratings
+        .rag.rag__choice
+          input(type="radio" id=rating value=rating name="tags" checked=(rag.includes(rating)))
+          label(for=rating) #{rating}
+    //- label(for="rag") RAG Rating
+    //- select(type="select" name="rag")
+    //-   //- TODO: Add image here
+    //-   option(value=school.rag[].rating) Red
+    //-   option(value=school.rag[].rating) Amber
+    //-   option(value=school.rag[].rating) Green
     //- image upload
     label(for="upload") Photo
       input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")

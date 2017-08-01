@@ -14,6 +14,15 @@ router.get('/', catchErrors(schoolController.getSchools));
 router.get('/schools', catchErrors(schoolController.getSchools));
 router.get('/school/:slug', catchErrors(schoolController.getSchoolBySlug));
 
+// Add/edit school and sub docs
+router.get('/add', schoolController.addSchool);
+router.post(
+	'/add',
+	schoolController.upload,
+	catchErrors(schoolController.resize),
+	catchErrors(schoolController.createSchool)
+);
+
 // map
 router.get('/map', schoolController.mapPage);
 
