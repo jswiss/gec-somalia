@@ -1,10 +1,14 @@
 extends layout
 
-//- include mixins/_reviewForm
+include mixins/_schoolForm
+include mixins/_formForm
+include mixins/_form
+//- include mixins/_teacherForm
+//- include mixins/_studentForm
 //- include mixins/_review
 
 block content
-  //- pre= h.dump(school)
+  pre= h.dump(school)
   .single
     .single__hero
       img.single__image(src=`/uploads/${school.photo || 'school.png'}`)
@@ -30,3 +34,10 @@ block content
     //-     each r in school.reviews
     //-       .review
     //-         +review(r)
+
+  //- +formForm(school)
+  if school.forms
+      .forms
+        each f in school.forms
+          .form
+            +form(f)

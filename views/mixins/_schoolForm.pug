@@ -15,7 +15,7 @@ mixin schoolForm(school = {})
     ul.rag
       each rating in ratings
         .rag.rag__choice
-          input(type="radio" id=rating value=rating name="tags" checked=(rag.includes(rating)))
+          input(type="radio" id=rating value=rating name="rag" checked=(rag.includes(rating)))
           label(for=rating) #{rating}
     //- label(for="rag") RAG Rating
     //- select(type="select" name="rag")

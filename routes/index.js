@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const schoolController = require('../controllers/school.controller');
+const formController = require('../controllers/form.controller');
 // const userController = require('../controllers/user.controller');
 // const authController = require('../controllers/auth.controller');
 // const studentController = require('../controllers/student.controller');
@@ -29,5 +30,8 @@ router.get('/map', schoolController.mapPage);
 // API Endpoints
 router.get('/api/v1/search', catchErrors(schoolController.searchSchools));
 router.get('/api/v1/schools/near', catchErrors(schoolController.mapSchools));
+
+// Form stuff (TODO: repeat for Teachers and Students)
+router.post('/forms/:id', catchErrors(formController.addForm));
 
 module.exports = router;

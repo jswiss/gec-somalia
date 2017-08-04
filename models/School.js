@@ -92,7 +92,7 @@ schoolSchema.index({
 });
 
 schoolSchema.index({
-'location.village': 'text',
+	'location.village': 'text',
 });
 
 // index location
@@ -128,5 +128,23 @@ schoolSchema.statics.getTagsList = function() {
 		{ $sort: { count: 1 } },
 	]);
 };
+
+schoolSchema.virtual('forms', {
+	// mongoose to query Form model
+	ref: 'Form',
+	// find matching school _id and school field in Review
+	localField: '_id',
+	foreignField: 'school',
+});
+
+function autopopulate(next) {
+	this.populate('forms');
+	// this.populate('students');
+	// this.populate('teachers');
+	next();
+}
+
+schoolSchema.pre('find', autopopulate);
+schoolSchema.pre('findOne', autopopulate);
 
 module.exports = mongoose.model('School', schoolSchema);

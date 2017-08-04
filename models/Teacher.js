@@ -43,7 +43,7 @@ const teacherSchema = new mongoose.Schema({
 		type: String,
 		trim: true,
 		required: true,
-		enum: ['male', 'female'],
+		enum: ['M', 'F'],
 	},
 	birthdate: Date,
 	attendance: [

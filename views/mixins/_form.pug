@@ -1,0 +1,10 @@
+mixin form(form)
+  .form__header
+    .form__code
+      p= form.code
+    .form__level
+      p= form.level
+    time.form__time(datetime=form.created)= h.moment(form.created).fromNow()
+
+  .form__body
+    p= form.text
