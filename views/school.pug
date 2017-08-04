@@ -8,7 +8,7 @@ include mixins/_form
 //- include mixins/_review
 
 block content
-  pre= h.dump(school)
+  //- pre= h.dump(school)
   .single
     .single__hero
       img.single__image(src=`/uploads/${school.photo || 'school.png'}`)
@@ -27,7 +27,7 @@ block content
               span.tag__text #{tag}
     
     //- if user
-    //-   +reviewForm(school)
+    +formForm(school)
 
     //- if school.reviews
     //-   .reviews
