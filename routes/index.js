@@ -33,5 +33,7 @@ router.get('/api/v1/schools/near', catchErrors(schoolController.mapSchools));
 
 // Form stuff (TODO: repeat for Teachers and Students)
 router.post('/forms/:id', catchErrors(formController.addForm));
+// Form stuff (TODO: repeat for Teachers and Students)
+router.post('/teachers/:id', catchErrors(formController.addTeacher));
 
 module.exports = router;

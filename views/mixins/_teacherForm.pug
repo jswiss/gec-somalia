@@ -1,0 +1,8 @@
+mixin teacherForm(school)
+  form(action=`/teachers/${school._id}` method="POST")
+    //- pre= h.dump(form)
+    label(for="level") Level
+    input(type="text" name="level")
+    label(for="code") Code
+    input(type="text" name="code")
+    input.button(type="submit" value="Save →" class="button")
