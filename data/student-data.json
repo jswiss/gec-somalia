@@ -1,6 +1,7 @@
 [
 	{
 		"_id": "598a0c2cfc13ae14b50003f2",
+		"currentSchool": "5979a4a0fc13ae393900000a",
 		"name": "Karen Bullas",
 		"gender": "M",
 		"birthdate": "3/28/2003",
@@ -10,12 +11,12 @@
 		"fatherInitials": "AM",
 		"motherInitials": "MM",
 		"slug": "3/28/2003_KB_MM_AM",
-		"currentlyEnrolled": false,
+		"currentlyEnrolled": true,
 		"dynamic": [
 			{
 				"year": "2018",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000a" }],
-				"form": [{ "formId": "5979a61ffc13ae3939000016" }],
+				"school": "5979a4a0fc13ae393900000a",
+				"form": "5979a61ffc13ae3939000016",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [{ "date": "7/10/2017", "amount": 31.65 }]
@@ -25,6 +26,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f3",
+		"currentSchool": "5979a4a0fc13ae393900000b",
 		"name": "Etienne Scrivenor",
 		"gender": "M",
 		"birthdate": "4/8/2006",
@@ -38,14 +40,8 @@
 		"dynamic": [
 			{
 				"year": "2017",
-				"school": [
-					{ "schoolId": "5979a4a0fc13ae393900000b" },
-					{ "schoolId": "5979a4a0fc13ae393900000a" }
-				],
-				"form": [
-					{ "formId": "5979a61ffc13ae393900001a" },
-					{ "formId": "5979a61ffc13ae3939000016" }
-				],
+				"school": "5979a4a0fc13ae393900000b",
+				"form": "5979a61ffc13ae393900001a",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [{ "date": "7/13/2017", "amount": 42.35 }]
@@ -55,6 +51,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f4",
+		"currentSchool": "5979a4a0fc13ae393900000b",
 		"name": "Maren Enderby",
 		"gender": "F",
 		"birthdate": "12/9/2012",
@@ -68,8 +65,8 @@
 		"dynamic": [
 			{
 				"year": "2018",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000a" }],
-				"form": [{ "formId": "5979a61ffc13ae3939000016" }],
+				"school": "5979a4a0fc13ae393900000b",
+				"form": "5979a61ffc13ae3939000016",
 				"bursary": {
 					"supported": false,
 					"paymentDetails": [{}]
@@ -77,8 +74,8 @@
 			},
 			{
 				"year": "2017",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000a" }],
-				"form": [{ "formId": "5979a61ffc13ae3939000016" }],
+				"school": "5979a4a0fc13ae393900000a",
+				"form": "5979a61ffc13ae3939000016",
 				"bursary": {
 					"supported": false,
 					"paymentDetails": [{}]
@@ -88,6 +85,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f5",
+		"currentSchool": "5979a4a0fc13ae393900000a",
 		"name": "Alphonso Brambell",
 		"gender": "F",
 		"birthdate": "2/15/2002",
@@ -101,14 +99,8 @@
 		"dynamic": [
 			{
 				"year": "2017",
-				"school": [
-					{ "schoolId": "5979a4a0fc13ae393900000b" },
-					{ "schoolId": "5979a4a0fc13ae393900000a" }
-				],
-				"form": [
-					{ "formId": "5979a61ffc13ae393900001a" },
-					{ "formId": "5979a61ffc13ae3939000016" }
-				],
+				"school": "5979a4a0fc13ae393900000b",
+				"form": "5979a61ffc13ae393900001a",
 				"bursary": {
 					"supported": false,
 					"paymentDetails": [{}]
@@ -116,14 +108,8 @@
 			},
 			{
 				"year": "2018",
-				"school": [
-					{ "schoolId": "5979a4a0fc13ae393900000a" },
-					{ "schoolId": "5979a4a0fc13ae393900000b" }
-				],
-				"form": [
-					{ "formId": "5979a61ffc13ae3939000016" },
-					{ "formId": "5979a61ffc13ae393900001a" }
-				],
+				"school": "5979a4a0fc13ae393900000a",
+				"form": "5979a61ffc13ae3939000016",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [{ "date": "7/9/2017", "amount": 15.52 }]
@@ -133,6 +119,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f6",
+		"currentSchool": "5979a4a0fc13ae393900000b",
 		"name": "Iorgo Fairpool",
 		"gender": "M",
 		"birthdate": "12/11/2001",
@@ -142,12 +129,12 @@
 		"fatherInitials": "VB",
 		"motherInitials": "MP",
 		"slug": "12/11/2001_IF_MP_VB",
-		"currentlyEnrolled": false,
+		"currentlyEnrolled": true,
 		"dynamic": [
 			{
 				"year": "2018",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000b" }],
-				"form": [{ "formId": "5979a61ffc13ae393900001a" }],
+				"school": "5979a4a0fc13ae393900000b",
+				"form": "5979a61ffc13ae393900001a",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [
@@ -158,8 +145,8 @@
 			},
 			{
 				"year": "2017",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000a" }],
-				"form": [{ "formId": "5979a61ffc13ae3939000016" }],
+				"school": "5979a4a0fc13ae393900000a",
+				"form": "5979a61ffc13ae3939000016",
 				"bursary": {
 					"supported": false,
 					"paymentDetails": [{}]
@@ -169,6 +156,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f7",
+		"currentSchool": "5979a4a0fc13ae393900000a",
 		"name": "Margie Rouge",
 		"gender": "F",
 		"birthdate": "6/17/2000",
@@ -182,14 +170,8 @@
 		"dynamic": [
 			{
 				"year": "2018",
-				"school": [
-					{ "schoolId": "5979a4a0fc13ae393900000a" },
-					{ "schoolId": "5979a4a0fc13ae393900000b" }
-				],
-				"form": [
-					{ "formId": "5979a61ffc13ae3939000012" },
-					{ "formId": "5979a61ffc13ae393900001a" }
-				],
+				"school": "5979a4a0fc13ae393900000a",
+				"form": "5979a61ffc13ae3939000012",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [{ "date": "7/12/2017", "amount": 19.76 }]
@@ -197,8 +179,8 @@
 			},
 			{
 				"year": "2018",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000a" }],
-				"form": [{ "formId": "5979a61ffc13ae3939000012" }],
+				"school": "5979a4a0fc13ae393900000a",
+				"form": "5979a61ffc13ae3939000012",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [
@@ -211,6 +193,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f8",
+		"currentSchool": "5979a4a0fc13ae393900000b",
 		"name": "Ines Offa",
 		"gender": "F",
 		"birthdate": "11/5/2014",
@@ -220,18 +203,12 @@
 		"fatherInitials": "BD",
 		"motherInitials": "NP",
 		"slug": "11/5/2014_IO_NP_BD",
-		"currentlyEnrolled": false,
+		"currentlyEnrolled": true,
 		"dynamic": [
 			{
 				"year": "2017",
-				"school": [
-					{ "schoolId": "5979a4a0fc13ae393900000b" },
-					{ "schoolId": "5979a4a0fc13ae393900000a" }
-				],
-				"form": [
-					{ "formId": "5979a61ffc13ae393900001a" },
-					{ "formId": "5979a61ffc13ae3939000012" }
-				],
+				"school": "5979a4a0fc13ae393900000b",
+				"form": "5979a61ffc13ae393900001a",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [
@@ -242,14 +219,8 @@
 			},
 			{
 				"year": "2018",
-				"school": [
-					{ "schoolId": "5979a4a0fc13ae393900000b" },
-					{ "schoolId": "5979a4a0fc13ae393900000a" }
-				],
-				"form": [
-					{ "formId": "5979a61ffc13ae393900001a" },
-					{ "formId": "5979a61ffc13ae3939000012" }
-				],
+				"school": "5979a4a0fc13ae393900000b",
+				"form": "5979a61ffc13ae393900001a",
 				"bursary": {
 					"supported": false,
 					"paymentDetails": [{}]
@@ -259,6 +230,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f9",
+		"currentSchool": "5979a4a0fc13ae393900000a",
 		"name": "Billie Faustian",
 		"gender": "F",
 		"birthdate": "2/6/2015",
@@ -268,12 +240,12 @@
 		"fatherInitials": "CC",
 		"motherInitials": "AA",
 		"slug": "2/6/2015_BF_AA_CC",
-		"currentlyEnrolled": true,
+		"currentlyEnrolled": false,
 		"dynamic": [
 			{
 				"year": "2017",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000a" }],
-				"form": [{ "formId": "5979a61ffc13ae3939000012" }],
+				"school": "5979a4a0fc13ae393900000a",
+				"form": "5979a61ffc13ae3939000012",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [
@@ -287,6 +259,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003fa",
+		"currentSchool": "5979a4a0fc13ae393900000b",
 		"name": "Cosimo Eggleson",
 		"gender": "M",
 		"birthdate": "11/26/2003",
@@ -296,12 +269,12 @@
 		"fatherInitials": "GB",
 		"motherInitials": "MC",
 		"slug": "11/26/2003_CE_MC_GB",
-		"currentlyEnrolled": true,
+		"currentlyEnrolled": false,
 		"dynamic": [
 			{
 				"year": "2017",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000b" }],
-				"form": [{ "formId": "5979a61ffc13ae393900001a" }],
+				"school": "5979a4a0fc13ae393900000b",
+				"form": "5979a61ffc13ae393900001a",
 				"bursary": {
 					"supported": true,
 					"paymentDetails": [{ "date": "7/11/2017", "amount": 17.44 }]
@@ -311,6 +284,7 @@
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003fb",
+		"currentSchool": "5979a4a0fc13ae393900000a",
 		"name": "Wilt Edgerly",
 		"gender": "M",
 		"birthdate": "6/21/2000",
@@ -324,8 +298,8 @@
 		"dynamic": [
 			{
 				"year": "2018",
-				"school": [{ "schoolId": "5979a4a0fc13ae393900000a" }],
-				"form": [{ "formId": "5979a61ffc13ae3939000012" }],
+				"school": "5979a4a0fc13ae393900000a",
+				"form": "5979a61ffc13ae3939000012",
 				"bursary": {
 					"supported": false,
 					"paymentDetails": []

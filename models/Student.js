@@ -36,27 +36,24 @@ const studentSchema = new mongoose.Schema({
 		type: Boolean,
 		required: true,
 	},
+	currentSchool: {
+		type: mongoose.Schema.ObjectId,
+		ref: 'School',
+		required: true,
+	},
 	dynamic: [
 		{
 			year: { type: Number, required: true, min: 2017, max: 2020 },
-			school: [
-				{
-					schoolId: {
-						type: mongoose.Schema.ObjectId,
-						ref: 'School',
-						required: true,
-					},
-				},
-			],
-			form: [
-				{
-					formId: {
-						type: mongoose.Schema.ObjectId,
-						ref: 'Form',
-						required: true,
-					},
-				},
-			],
+			school: {
+				type: mongoose.Schema.ObjectId,
+				ref: 'School',
+				required: true,
+			},
+			form: {
+				type: mongoose.Schema.ObjectId,
+				ref: 'Form',
+				required: true,
+			},
 			bursary: {
 				supported: { type: Boolean, required: true },
 				paymentDetails: [
@@ -66,10 +63,12 @@ const studentSchema = new mongoose.Schema({
 					},
 				],
 			},
-			attendance: {
-				date: Date,
-				attended: Boolean,
-			},
+			attendance: [
+				{
+					date: Date,
+					attended: Boolean,
+				},
+			],
 		},
 	],
 });

@@ -143,9 +143,15 @@ schoolSchema.virtual('teachers', {
 	foreignField: 'school',
 });
 
+schoolSchema.virtual('students', {
+	ref: 'Student',
+	localField: '_id',
+	foreignField: 'currentSchool',
+});
+
 function autopopulate(next) {
 	this.populate('forms');
-	// this.populate('students');
+	this.populate('students');
 	this.populate('teachers');
 	next();
 }
