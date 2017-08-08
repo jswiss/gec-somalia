@@ -24,6 +24,8 @@ router.post(
 	catchErrors(schoolController.createSchool)
 );
 
+router.get('/schools/:id/edit', catchErrors(schoolController.editSchool));
+
 // map
 router.get('/map', schoolController.mapPage);
 

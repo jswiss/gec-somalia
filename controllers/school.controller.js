@@ -101,6 +101,24 @@ exports.addSchool = (req, res) => {
 	res.render('editSchool', { title: 'Add School' });
 };
 
+const confirmOwner = (school, user) => {
+	if (!school.author.equals(user._id)) {
+		throw Error('You must be a head teacher of a school or admin to edit it');
+	}
+};
+
+exports.editSchool = async (req, res) => {
+	// 1. Find the store given the ID
+	const school = await School.findOne({ _id: req.params.id });
+
+	// confirmOwner(school, req.user);
+	// 3. Render out the edit form so the user can update their store
+	res.render('editSchool', {
+		title: `Edit ${school.name}`,
+		school,
+	});
+};
+
 exports.upload = multer(multerOptions).single('photo');
 
 exports.resize = async (req, res, next) => {

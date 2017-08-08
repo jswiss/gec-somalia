@@ -1,0 +1,10 @@
+mixin teacher(teacher)
+  .teacher__header
+    .teacher__code
+      p= teacher.code
+    .teacher__level
+      p= teacher.level
+    time.teacher__time(datetime=teacher.created)= h.moment(teacher.created).fromNow()
+
+  .teacher__body
+    p= teacher.text
