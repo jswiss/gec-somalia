@@ -1,8 +1,18 @@
 mixin teacherForm(school)
   form(action=`/teachers/${school._id}` method="POST")
     //- pre= h.dump(form)
-    label(for="level") Level
-    input(type="text" name="level")
-    label(for="code") Code
-    input(type="text" name="code")
+    label(for="name") Name
+    input(type="text" name="name" placeholder="Full name, i.e. all three names")
+    label Head Teacher?
+    label(for="yes") Yes
+    input(type="radio" name="headTeacher" value="true")#yes
+    label(for="no") No
+    input(type="radio" name="headTeacher" value="false")#no
+    - const choices = ['Maths', 'English', 'Somali', 'Social Studies','History', 'Science', 'Physics', 'Islamic Studies', 'Arabic']
+    - const subjects = school.subjects || []
+    ul.tags
+      each choice in choices
+        .tag.tag__choice
+          input(type="checkbox" id=choice value=choice name="subjects" checked=(subjects.includes(choice)))
+          label(for=choice) #{choice}
     input.button(type="submit" value="Save →" class="button")

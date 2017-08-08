@@ -17,12 +17,6 @@ mixin schoolForm(school = {})
         .rag.rag__choice
           input(type="radio" id=rating value=rating name="rag" checked=(rag.includes(rating)))
           label(for=rating) #{rating}
-    //- label(for="rag") RAG Rating
-    //- select(type="select" name="rag")
-    //-   //- TODO: Add image here
-    //-   option(value=school.rag[].rating) Red
-    //-   option(value=school.rag[].rating) Amber
-    //-   option(value=school.rag[].rating) Green
     //- image upload
     label(for="upload") Photo
       input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")

@@ -4,8 +4,8 @@ const schoolController = require('../controllers/school.controller');
 const formController = require('../controllers/form.controller');
 // const userController = require('../controllers/user.controller');
 // const authController = require('../controllers/auth.controller');
-// const studentController = require('../controllers/student.controller');
-// const teacherController = require('../controllers/teacher.controller');
+const studentController = require('../controllers/student.controller');
+const teacherController = require('../controllers/teacher.controller');
 
 // if you don't wrap async/await in try/catch, has to be wrapped in error
 // handling function
@@ -31,9 +31,16 @@ router.get('/map', schoolController.mapPage);
 router.get('/api/v1/search', catchErrors(schoolController.searchSchools));
 router.get('/api/v1/schools/near', catchErrors(schoolController.mapSchools));
 
-// Form stuff (TODO: repeat for Teachers and Students)
+// Form stuff
 router.post('/forms/:id', catchErrors(formController.addForm));
-// Form stuff (TODO: repeat for Teachers and Students)
+
+// Teacher stuff
 router.post('/teachers/:id', catchErrors(formController.addTeacher));
+
+// TODO: Student stuff
+router.get(
+	'/school/:slug/form/:form/students/:date',
+	catchErrors(studentController.getStudents)
+);
 
 module.exports = router;

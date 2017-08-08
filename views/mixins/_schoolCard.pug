@@ -29,14 +29,15 @@ mixin schoolCard(school = {})
         //-       //- button instead of input, because we want to put html inside the button, and you can't do that with input
         //-       button.heart__button(type="submit" name="heart" class=heartClass)
         //-         != h.icon('heart')
-        if user && school.author.equals(user._id)
-          .school__action.school__action--edit
-            a(href=`/schools/${school._id}/edit`)
-              != h.icon('pencil')
-        if school.reviews
+        //- if user && school.author.equals(user._id)
+        .school__action.school__action--edit
+          a(href=`/schools/${school._id}/edit`)
+            != h.icon('pencil')
+
+        if school.forms.students
           .school__action.school__action--count
-            != h.icon('review')
-            span= school.reviews.length
+            != h.icon('student')
+            span= school.forms.students.length
             
       img(src=`/uploads/${school.photo || 'school.png'}`)
       h2.title
