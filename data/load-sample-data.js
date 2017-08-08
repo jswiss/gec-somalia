@@ -8,14 +8,16 @@ mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 // import all of our models - they need to be imported only once
 const School = require('../models/School');
 // const User = require('../models/User');
-// const Student = require('../models/Student');
+const Student = require('../models/Student');
 const Teacher = require('../models/Teacher');
 const Form = require('../models/Form');
 
 const schools = JSON.parse(
 	fs.readFileSync(__dirname + '/school-data.json', 'utf-8')
 );
-// const students = JSON.parse(fs.readFileSync(__dirname + '/student-data.json', 'utf-8'));
+const students = JSON.parse(
+	fs.readFileSync(__dirname + '/student-data.json', 'utf-8')
+);
 // const users = JSON.parse(fs.readFileSync(__dirname + '/user-data.json', 'utf-8'));
 const forms = JSON.parse(
 	fs.readFileSync(__dirname + '/Form-data.json', 'utf-8')
@@ -28,7 +30,7 @@ async function deleteData() {
 	console.log('😢😢 Goodbye Data...');
 	await School.remove();
 	// await User.remove();
-	// await Student.remove();
+	await Student.remove();
 	await Teacher.remove();
 	await Form.remove();
 	console.log(
@@ -41,7 +43,7 @@ async function loadData() {
 	try {
 		await School.insertMany(schools);
 		// await User.insertMany(users);
-		// await Student.insertMany(students);
+		await Student.insertMany(students);
 		await Teacher.insertMany(teachers);
 		await Form.insertMany(forms);
 		console.log('👍👍👍👍👍👍👍👍 Done!');

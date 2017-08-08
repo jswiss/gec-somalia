@@ -12,6 +12,8 @@ const studentSchema = new mongoose.Schema({
 		required: true,
 	},
 	initials: String,
+	fatherInitials: String,
+	motherInitials: String,
 	slug: String,
 	gender: {
 		type: String,
@@ -39,21 +41,20 @@ const studentSchema = new mongoose.Schema({
 			year: { type: Number, required: true, min: 2017, max: 2020 },
 			school: [
 				{
-					type: mongoose.Schema.ObjectId,
-					ref: 'School',
-					required: true,
+					schoolId: {
+						type: mongoose.Schema.ObjectId,
+						ref: 'School',
+						required: true,
+					},
 				},
 			],
 			form: [
 				{
-					type: mongoose.Schema.ObjectId,
-					ref: 'Form',
-					required: true,
-				},
-			],
-			teacher: [
-				{
-					// link up teacher to class to teacher?
+					formId: {
+						type: mongoose.Schema.ObjectId,
+						ref: 'Form',
+						required: true,
+					},
 				},
 			],
 			bursary: {
@@ -83,7 +84,12 @@ studentSchema.pre('save', async function(next) {
 	}
 	// this requires a real function
 	this.initials = this.name.match(/\b\w/g).join('').toUpperCase();
-	this.slug = slug(`${this.school}_${this.class}_${this.initials}`);
+	this.fatherInitials = this.fatherName.match(/\b\w/g).join('').toUpperCase();
+	this.motherInitials = this.motherName.match(/\b\w/g).join('').toUpperCase();
+	this.slug = slug(
+		`${this.birthdate}_${this.initials}_${this.motherInitials}_${this
+			.fatherInitials}`
+	);
 	// check if the slug is unique
 	const slugRegex = new RegExp(`^(${this.slug})((-[0-9]*$)?)`, 'i');
 	const studentWithSlug = await this.constructor.find({ slug: slugRegex });
