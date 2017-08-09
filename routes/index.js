@@ -31,7 +31,7 @@ router.get('/map', schoolController.mapPage);
 
 // API Endpoints
 router.get('/api/v1/search', catchErrors(schoolController.searchSchools));
-router.get('/api/v1/schools/near', catchErrors(schoolController.mapSchools));
+router.get('/api/v1/schools/map', catchErrors(schoolController.mapSchools));
 
 // Form stuff
 router.post('/forms/:id', catchErrors(formController.addForm));

@@ -990,7 +990,7 @@ exports.default = autocomplete;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
@@ -1004,68 +1004,68 @@ var _bling = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapOptions = {
-  center: { lat: 9.757857, lng: 47.805819 },
-  zoom: 7
+	center: { lat: 9.257857, lng: 47.805819 },
+	zoom: 7
 };
 
 function loadPlaces(map) {
-  var lat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 9.757857;
-  var lng = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 47.805819;
+	var lat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 9.257857;
+	var lng = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 47.805819;
 
-  _axios2.default.get('/api/v1/schools/near?lat=' + lat + '&lng=' + lng).then(function (res) {
-    var schools = res.data;
-    console.log(schools);
-    if (!schools.length) {
-      alert('no schools here!');
-      return;
-    }
+	_axios2.default.get('/api/v1/schools/map').then(function (res) {
+		var places = res.data;
+		console.log(places);
+		if (!places.length) {
+			alert('no schools here!');
+			return;
+		}
 
-    // create a boundary area
-    var bounds = new google.maps.LatLngBounds();
-    var infoWindow = new google.maps.InfoWindow();
+		// create a boundary area
+		var bounds = new google.maps.LatLngBounds();
+		var infoWindow = new google.maps.InfoWindow();
 
-    var markers = places.map(function (place) {
-      var _place$location$coord = _slicedToArray(place.location.coordinates, 2),
-          placeLng = _place$location$coord[0],
-          placeLat = _place$location$coord[1];
+		var markers = places.map(function (place) {
+			var _place$location$coord = _slicedToArray(place.location.coordinates, 2),
+			    placeLng = _place$location$coord[0],
+			    placeLat = _place$location$coord[1];
 
-      var position = { lat: placeLat, lng: placeLng };
-      bounds.extend(position);
-      var marker = new google.maps.Marker({
-        map: map,
-        position: position
-      });
-      marker.place = place;
-      return marker;
-    });
+			var position = { lat: placeLat, lng: placeLng };
+			bounds.extend(position);
+			var marker = new google.maps.Marker({
+				map: map,
+				position: position
+			});
+			marker.place = place;
+			return marker;
+		});
 
-    // When someone clicks on a marker, show the details of that place
-    markers.forEach(function (marker) {
-      return marker.addListener('click', function () {
-        var html = '\n          <div class="popup">\n            <a href="/school/' + this.school.slug + '">\n              <img src="/uploads/' + (this.school.photo || 'school.png') + '" alt="' + this.school.name + '" />\n              <p><strong>' + this.school.name + '</strong> -  ' + this.school.location.village + '</p>\n            </a>\n          </div>\n        ';
-        infoWindow.setContent(html);
-        infoWindow.open(map, this);
-      });
-    });
+		// When someone clicks on a marker, show the details of that place
+		markers.forEach(function (marker) {
+			return marker.addListener('click', function () {
+				var html = '\n          <div class="popup">\n            <a href="/school/' + this.school.slug + '">\n              <img src="/uploads/' + (this.school.photo || 'school.png') + '" alt="' + this.school.name + '" />\n              <p><strong>' + this.school.name + '</strong> -  ' + this.school.location.village + '</p>\n            </a>\n          </div>\n        ';
+				infoWindow.setContent(html);
+				infoWindow.open(map, this);
+			});
+		});
 
-    // zoom the map to fit the boundary area
-    map.setCenter(bounds.getCenter());
-    map.fitBounds(bounds);
-  });
+		// zoom the map to fit the boundary area
+		map.setCenter(bounds.getCenter());
+		map.fitBounds(bounds);
+	});
 }
 
 // pass input to Google Maps Autocomplete!
 function makeMap(mapDiv) {
-  if (!mapDiv) return;
-  // make our map
-  var map = new google.maps.Map(mapDiv, mapOptions);
-  loadPlaces(map);
-  var input = (0, _bling.$)('[name="geolocate"]');
-  var autocomplete = new google.maps.places.Autocomplete(input);
-  autocomplete.addListener('place_changed', function () {
-    var place = autocomplete.getPlace();
-    loadPlaces(map, place.geometry.location.lat(), place.geometry.location.lng());
-  });
+	if (!mapDiv) return;
+	// make our map
+	var map = new google.maps.Map(mapDiv, mapOptions);
+	loadPlaces(map);
+	var input = (0, _bling.$)('[name="geolocate"]');
+	var autocomplete = new google.maps.places.Autocomplete(input);
+	autocomplete.addListener('place_changed', function () {
+		var place = autocomplete.getPlace();
+		loadPlaces(map, place.geometry.location.lat(), place.geometry.location.lng());
+	});
 }
 
 exports.default = makeMap;

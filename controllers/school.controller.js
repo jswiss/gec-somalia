@@ -56,24 +56,6 @@ exports.getSchoolBySlug = async (req, res, next) => {
 	res.render('school', { school, title: school.name });
 };
 
-exports.mapSchools = async (req, res) => {
-	const coordinates = [req.query.lng, req.query.lat].map(parseFloat);
-	const q = {
-		location: {
-			$near: {
-				$geometry: {
-					type: 'Point',
-					coordinates: coordinates,
-				},
-				$maxDistance: 1000000, // 1000 km
-			},
-		},
-	};
-	const schools = await School.find(q).select(
-		'slug name location rag photo project'
-	);
-};
-
 // API search
 exports.searchSchools = async (req, res) => {
 	const schools = await School.find(
@@ -149,4 +131,11 @@ exports.createSchool = async (req, res) => {
 
 exports.mapPage = (req, res) => {
 	res.render('map', { title: 'Map' });
+};
+
+exports.mapSchools = async (req, res) => {
+	const schools = await School.find({}).select(
+		'slug name location photo rag project'
+	);
+	res.json(schools);
 };
