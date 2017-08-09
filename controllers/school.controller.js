@@ -135,7 +135,7 @@ exports.mapPage = (req, res) => {
 
 exports.mapSchools = async (req, res) => {
 	const schools = await School.find({}).select(
-		'slug name location photo rag project'
+		'slug name location photo rag project markerColor'
 	);
 	res.json(schools);
 };

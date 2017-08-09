@@ -26,7 +26,7 @@ function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
 			console.log(place.markerColor);
 			const marker = new google.maps.Marker({
 				map: map,
-				icon: place.markerColour,
+				icon: place.markerColor,
 				position: position,
 			});
 			marker.place = place;

@@ -1034,7 +1034,7 @@ function loadPlaces(map) {
 			console.log(place.markerColor);
 			var marker = new google.maps.Marker({
 				map: map,
-				icon: place.markerColour,
+				icon: place.markerColor,
 				position: position
 			});
 			marker.place = place;
