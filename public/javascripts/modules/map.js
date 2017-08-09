@@ -36,10 +36,10 @@ function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
 			marker.addListener('click', function() {
 				const html = `
           <div class="popup">
-            <a href="/school/${this.school.slug}">
-              <img src="/uploads/${this.school.photo ||
-								'school.png'}" alt="${this.school.name}" />
-              <p><strong>${this.school.name}</strong> -  ${this.school.location
+            <a href="/school/${this.place.slug}">
+              <img src="/uploads/${this.place.photo ||
+								'school.png'}" alt="${this.place.name}" />
+              <p><strong>${this.place.name}</strong> -  ${this.place.location
 					.village}</p>
             </a>
           </div>
