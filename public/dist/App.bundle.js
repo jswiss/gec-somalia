@@ -1044,7 +1044,7 @@ function loadPlaces(map) {
 		// When someone clicks on a marker, show the details of that place
 		markers.forEach(function (marker) {
 			return marker.addListener('click', function () {
-				var html = '\n          <div class="popup">\n            <a href="/school/' + this.place.slug + '">\n              <img src="/uploads/' + (this.place.photo || 'school.png') + '" alt="' + this.place.name + '" />\n              <p><strong>' + this.place.name + '</strong> -  ' + this.place.location.village + '</p>\n            </a>\n          </div>\n        ';
+				var html = '\n          <div class="popup">\n            <a href="/school/' + this.place.slug + '">\n              <img src="/uploads/' + (this.place.photo || 'school.png') + '" alt="' + this.place.name + '" />\n              <p><strong>' + this.place.name + '</strong> -  ' + this.place.location.village + ', ' + this.place.location.district + '</p>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<p>Project: ' + this.place.project + '</p>\n          </div>\n        ';
 				infoWindow.setContent(html);
 				infoWindow.open(map, this);
 			});

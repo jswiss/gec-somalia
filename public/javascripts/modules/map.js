@@ -42,8 +42,9 @@ function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
               <img src="/uploads/${this.place.photo ||
 								'school.png'}" alt="${this.place.name}" />
               <p><strong>${this.place.name}</strong> -  ${this.place.location
-					.village}</p>
-            </a>
+					.village}, ${this.place.location.district}</p>
+						</a>
+						<p>Project: ${this.place.project}</p>
           </div>
         `;
 				infoWindow.setContent(html);
