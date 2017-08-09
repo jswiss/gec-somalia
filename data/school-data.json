@@ -26,10 +26,10 @@
 		"name": "Fay, Bailey and Pollich",
 		"code": "FBaP",
 		"rag": [
-			{ "date": "10/10/2017", "rating": "yellow" },
-			{ "date": "8/11/2017", "rating": "yellow" }
+			{ "date": "10/10/2017", "rating": "orange" },
+			{ "date": "8/11/2017", "rating": "orange" }
 		],
-		"markerColor": "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+		"markerColor": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
 		"location": {
 			"village": "Aquamarine",
 			"district": "Lotus",
@@ -45,8 +45,8 @@
 		"project": "SOMGEP",
 		"name": "Ondricka and Sons",
 		"code": "OaS",
-		"rag": [{ "date": "8/18/2017", "rating": "yellow" }],
-		"markerColor": "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+		"rag": [{ "date": "8/18/2017", "rating": "orange" }],
+		"markerColor": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
 		"location": {
 			"village": "Turquoise",
 			"district": "Lincoln",
@@ -63,7 +63,7 @@
 		"name": "Will-Hartmann",
 		"code": "W",
 		"rag": [
-			{ "date": "7/26/2017", "rating": "yellow" },
+			{ "date": "7/26/2017", "rating": "orange" },
 			{ "date": "8/19/2017", "rating": "red" }
 		],
 		"markerColor": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
@@ -85,7 +85,7 @@
 		"rag": [
 			{ "date": "10/23/2017", "rating": "green" },
 			{ "date": "9/28/2017", "rating": "green" },
-			{ "date": "10/5/2017", "rating": "yellow" },
+			{ "date": "10/5/2017", "rating": "orange" },
 			{ "date": "8/3/2017", "rating": "red" }
 		],
 		"markerColor": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",

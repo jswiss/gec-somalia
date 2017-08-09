@@ -34,7 +34,7 @@ const schoolSchema = new mongoose.Schema(
 				},
 				rating: {
 					type: String,
-					enum: ['red', 'yellow', 'green'],
+					enum: ['red', 'orange', 'green'],
 				},
 			},
 		],
