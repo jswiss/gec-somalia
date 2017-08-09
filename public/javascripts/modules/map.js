@@ -23,8 +23,10 @@ function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
 			const [placeLng, placeLat] = place.location.coordinates;
 			const position = { lat: placeLat, lng: placeLng };
 			bounds.extend(position);
+			console.log(place.markerColor);
 			const marker = new google.maps.Marker({
 				map: map,
+				icon: place.markerColour,
 				position: position,
 			});
 			marker.place = place;
@@ -61,16 +63,16 @@ function makeMap(mapDiv) {
 	// make our map
 	const map = new google.maps.Map(mapDiv, mapOptions);
 	loadPlaces(map);
-	const input = $('[name="geolocate"]');
-	const autocomplete = new google.maps.places.Autocomplete(input);
-	autocomplete.addListener('place_changed', () => {
-		const place = autocomplete.getPlace();
-		loadPlaces(
-			map,
-			place.geometry.location.lat(),
-			place.geometry.location.lng()
-		);
-	});
+	// const input = $('[name="geolocate"]');
+	// const autocomplete = new google.maps.places.Autocomplete(input);
+	// autocomplete.addListener('place_changed', () => {
+	// 	const place = autocomplete.getPlace();
+	// 	loadPlaces(
+	// 		map,
+	// 		place.geometry.location.lat(),
+	// 		place.geometry.location.lng()
+	// 	);
+	// });
 }
 
 export default makeMap;

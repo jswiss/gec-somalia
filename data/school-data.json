@@ -1,96 +1,101 @@
 [
-  {
-    "_id": "5979a4a0fc13ae393900000a",
-    "slug": "torp-conroy-and-douglas",
-    "project": "SOMGEP",
-    "name": "Torp, Conroy and Douglas",
-    "code": "TCaD",
-    "rag": [
-      { "date": "8/9/2017", "rating": "red" },
-      { "date": "9/23/2017", "rating": "green" }
-    ],
-    "location": {
-      "village": "Puce",
-      "district": "Lincoln",
-      "region": "Town Car",
-      "state": "Nanmuping",
-      "coordinates": [45.768477, 10.42068046],
-      "type": "Point"
-    }
-  },
-  {
-    "_id": "5979a4a0fc13ae393900000b",
-    "slug": "fay-bailey-and-pollich",
-    "project": "SOMGEP",
-    "name": "Fay, Bailey and Pollich",
-    "code": "FBaP",
-    "rag": [
-      { "date": "10/10/2017", "rating": "amber" },
-      { "date": "8/11/2017", "rating": "amber" }
-    ],
-    "location": {
-      "village": "Aquamarine",
-      "district": "Lotus",
-      "region": "Elan",
-      "state": "Kihancha",
-      "coordinates": [45.868477, 9.52068046],
-      "type": "Point"
-    }
-  },
-  {
-    "_id": "5979a4a0fc13ae393900000c",
-    "slug": "ondricka-and-sons",
-    "project": "SOMGEP",
-    "name": "Ondricka and Sons",
-    "code": "OaS",
-    "rag": [{ "date": "8/18/2017", "rating": "amber" }],
-    "location": {
-      "village": "Turquoise",
-      "district": "Lincoln",
-      "region": "MKX",
-      "state": "Debar",
-      "coordinates": [45.368477, 8.72068046],
-      "type": "Point"
-    }
-  },
-  {
-    "_id": "5979a4a0fc13ae393900000d",
-    "slug": "will-hartmann",
-    "project": "SOMGEP",
-    "name": "Will-Hartmann",
-    "code": "W",
-    "rag": [
-      { "date": "7/26/2017", "rating": "amber" },
-      { "date": "8/19/2017", "rating": "green" }
-    ],
-    "location": {
-      "village": "Turquoise",
-      "district": "Rolls-Royce",
-      "region": "Ghost",
-      "state": "Alta Gracia",
-      "coordinates": [44.668477, 9.52068046],
-      "type": "Point"
-    }
-  },
-  {
-    "_id": "5979a4a0fc13ae393900000e",
-    "slug": "keebler-tillman",
-    "project": "SOMGEP",
-    "name": "Keebler-Tillman",
-    "code": "K",
-    "rag": [
-      { "date": "10/23/2017", "rating": "green" },
-      { "date": "9/28/2017", "rating": "green" },
-      { "date": "10/5/2017", "rating": "amber" },
-      { "date": "8/3/2017", "rating": "red" }
-    ],
-    "location": {
-      "village": "Aquamarine",
-      "district": "Pontiac",
-      "region": "Sunbird",
-      "state": "Starobin",
-      "coordinates": [42.868477, 9.795833],
-      "type": "Point"
-    }
-  }
+	{
+		"_id": "5979a4a0fc13ae393900000a",
+		"slug": "torp-conroy-and-douglas",
+		"project": "SOMGEP",
+		"name": "Torp, Conroy and Douglas",
+		"code": "TCaD",
+		"rag": [
+			{ "date": "8/9/2017", "rating": "red" },
+			{ "date": "9/23/2017", "rating": "green" }
+		],
+		"markerColor": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+		"location": {
+			"village": "Puce",
+			"district": "Lincoln",
+			"region": "Town Car",
+			"state": "Nanmuping",
+			"coordinates": [45.768477, 10.42068046],
+			"type": "Point"
+		}
+	},
+	{
+		"_id": "5979a4a0fc13ae393900000b",
+		"slug": "fay-bailey-and-pollich",
+		"project": "SOMGEP",
+		"name": "Fay, Bailey and Pollich",
+		"code": "FBaP",
+		"rag": [
+			{ "date": "10/10/2017", "rating": "yellow" },
+			{ "date": "8/11/2017", "rating": "yellow" }
+		],
+		"markerColor": "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+		"location": {
+			"village": "Aquamarine",
+			"district": "Lotus",
+			"region": "Elan",
+			"state": "Kihancha",
+			"coordinates": [45.868477, 9.52068046],
+			"type": "Point"
+		}
+	},
+	{
+		"_id": "5979a4a0fc13ae393900000c",
+		"slug": "ondricka-and-sons",
+		"project": "SOMGEP",
+		"name": "Ondricka and Sons",
+		"code": "OaS",
+		"rag": [{ "date": "8/18/2017", "rating": "yellow" }],
+		"markerColor": "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+		"location": {
+			"village": "Turquoise",
+			"district": "Lincoln",
+			"region": "MKX",
+			"state": "Debar",
+			"coordinates": [45.368477, 8.72068046],
+			"type": "Point"
+		}
+	},
+	{
+		"_id": "5979a4a0fc13ae393900000d",
+		"slug": "will-hartmann",
+		"project": "SOMGEP",
+		"name": "Will-Hartmann",
+		"code": "W",
+		"rag": [
+			{ "date": "7/26/2017", "rating": "yellow" },
+			{ "date": "8/19/2017", "rating": "red" }
+		],
+		"markerColor": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+		"location": {
+			"village": "Turquoise",
+			"district": "Rolls-Royce",
+			"region": "Ghost",
+			"state": "Alta Gracia",
+			"coordinates": [44.668477, 9.52068046],
+			"type": "Point"
+		}
+	},
+	{
+		"_id": "5979a4a0fc13ae393900000e",
+		"slug": "keebler-tillman",
+		"project": "SOMGEP",
+		"name": "Keebler-Tillman",
+		"code": "K",
+		"rag": [
+			{ "date": "10/23/2017", "rating": "green" },
+			{ "date": "9/28/2017", "rating": "green" },
+			{ "date": "10/5/2017", "rating": "yellow" },
+			{ "date": "8/3/2017", "rating": "red" }
+		],
+		"markerColor": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+		"location": {
+			"village": "Aquamarine",
+			"district": "Pontiac",
+			"region": "Sunbird",
+			"state": "Starobin",
+			"coordinates": [42.868477, 9.795833],
+			"type": "Point"
+		}
+	}
 ]

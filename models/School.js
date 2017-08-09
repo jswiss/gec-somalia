@@ -6,6 +6,10 @@ const timestamps = require('mongoose-timestamp');
 
 const schoolSchema = new mongoose.Schema(
 	{
+		markerColor: {
+			type: String,
+			required: 'we need a marker color!!!!!',
+		},
 		name: {
 			type: String,
 			trim: true,
@@ -30,7 +34,7 @@ const schoolSchema = new mongoose.Schema(
 				},
 				rating: {
 					type: String,
-					enum: ['red', 'amber', 'green'],
+					enum: ['red', 'yellow', 'green'],
 				},
 			},
 		],
@@ -106,6 +110,9 @@ schoolSchema.pre('save', async function(next) {
 		next(); // skip it
 		return; // stop this function from running
 	}
+	this.markerColor = `http://maps.google.com/mapfiles/ms/icons/${this.rag[
+		this.rag.length - 1
+	].rating}-dot.png`;
 	// this requires a real function
 	this.slug = slug(this.name);
 	// check if the slug is unique

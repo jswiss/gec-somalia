@@ -20,7 +20,7 @@ const students = JSON.parse(
 );
 // const users = JSON.parse(fs.readFileSync(__dirname + '/user-data.json', 'utf-8'));
 const forms = JSON.parse(
-	fs.readFileSync(__dirname + '/Form-data.json', 'utf-8')
+	fs.readFileSync(__dirname + '/form-data.json', 'utf-8')
 );
 const teachers = JSON.parse(
 	fs.readFileSync(__dirname + '/teacher-data.json', 'utf-8')
