@@ -45,6 +45,7 @@ function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
 					.village}, ${this.place.location.district}</p>
 						</a>
 						<p>Project: ${this.place.project}</p>
+						<p>Number of Students: ${this.place.students.length}</p>
           </div>
         `;
 				infoWindow.setContent(html);
