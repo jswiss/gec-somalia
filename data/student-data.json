@@ -12,15 +12,15 @@
 		"motherInitials": "MM",
 		"slug": "3/28/2003_KB_MM_AM",
 		"currentlyEnrolled": true,
+		"bursary": {
+			"supported": true,
+			"paymentDetails": [{ "date": "7/10/2017", "amount": 31.65 }]
+		},
 		"dynamic": [
 			{
 				"year": "2018",
 				"school": "5979a4a0fc13ae393900000a",
-				"form": "5979a61ffc13ae3939000016",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [{ "date": "7/10/2017", "amount": 31.65 }]
-				}
+				"form": "5979a61ffc13ae3939000016"
 			}
 		]
 	},
@@ -37,21 +37,21 @@
 		"motherInitials": "KC",
 		"slug": "4/8/2006_ES_KC_BP",
 		"currentlyEnrolled": false,
+		"bursary": {
+			"supported": true,
+			"paymentDetails": [{ "date": "7/13/2017", "amount": 42.35 }]
+		},
 		"dynamic": [
 			{
 				"year": "2017",
 				"school": "5979a4a0fc13ae393900000b",
-				"form": "5979a61ffc13ae393900001a",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [{ "date": "7/13/2017", "amount": 42.35 }]
-				}
+				"form": "5979a61ffc13ae393900001a"
 			}
 		]
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f4",
-		"currentSchool": "5979a4a0fc13ae393900000b",
+		"currentSchool": "5979a4a0fc13ae393900000c",
 		"name": "Maren Enderby",
 		"gender": "F",
 		"birthdate": "12/9/2012",
@@ -62,30 +62,26 @@
 		"motherInitials": "CD",
 		"slug": "12/9/2012_ME_CD_DB",
 		"currentlyEnrolled": false,
+		"bursary": {
+			"supported": false,
+			"paymentDetails": [{}]
+		},
 		"dynamic": [
 			{
 				"year": "2018",
-				"school": "5979a4a0fc13ae393900000b",
-				"form": "5979a61ffc13ae3939000016",
-				"bursary": {
-					"supported": false,
-					"paymentDetails": [{}]
-				}
+				"school": "5979a4a0fc13ae393900000c",
+				"form": "5979a61ffc13ae3939000026"
 			},
 			{
 				"year": "2017",
 				"school": "5979a4a0fc13ae393900000a",
-				"form": "5979a61ffc13ae3939000016",
-				"bursary": {
-					"supported": false,
-					"paymentDetails": [{}]
-				}
+				"form": "5979a61ffc13ae3939000016"
 			}
 		]
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f5",
-		"currentSchool": "5979a4a0fc13ae393900000a",
+		"currentSchool": "5979a4a0fc13ae393900000d",
 		"name": "Alphonso Brambell",
 		"gender": "F",
 		"birthdate": "2/15/2002",
@@ -96,30 +92,26 @@
 		"motherInitials": "NW",
 		"slug": "2/15/2002_AB_NW_DS",
 		"currentlyEnrolled": true,
+		"bursary": {
+			"supported": true,
+			"paymentDetails": [{ "date": "7/9/2017", "amount": 15.52 }]
+		},
 		"dynamic": [
 			{
 				"year": "2017",
 				"school": "5979a4a0fc13ae393900000b",
-				"form": "5979a61ffc13ae393900001a",
-				"bursary": {
-					"supported": false,
-					"paymentDetails": [{}]
-				}
+				"form": "5979a61ffc13ae393900001a"
 			},
 			{
 				"year": "2018",
-				"school": "5979a4a0fc13ae393900000a",
-				"form": "5979a61ffc13ae3939000016",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [{ "date": "7/9/2017", "amount": 15.52 }]
-				}
+				"school": "5979a4a0fc13ae393900000d",
+				"form": "5979a61ffc13ae393900002a"
 			}
 		]
 	},
 	{
 		"_id": "598a0c2cfc13ae14b50003f6",
-		"currentSchool": "5979a4a0fc13ae393900000b",
+		"currentSchool": "5979a4a0fc13ae393900000e",
 		"name": "Iorgo Fairpool",
 		"gender": "M",
 		"birthdate": "12/11/2001",
@@ -130,27 +122,23 @@
 		"motherInitials": "MP",
 		"slug": "12/11/2001_IF_MP_VB",
 		"currentlyEnrolled": true,
+		"bursary": {
+			"supported": true,
+			"paymentDetails": [
+				{ "date": "7/30/2017", "amount": 49.11 },
+				{ "date": "8/1/2017", "amount": 25.81 }
+			]
+		},
 		"dynamic": [
 			{
 				"year": "2018",
-				"school": "5979a4a0fc13ae393900000b",
-				"form": "5979a61ffc13ae393900001a",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [
-						{ "date": "7/30/2017", "amount": 49.11 },
-						{ "date": "8/1/2017", "amount": 25.81 }
-					]
-				}
+				"school": "5979a4a0fc13ae393900000e",
+				"form": "5979a61ffc13ae3939000038"
 			},
 			{
 				"year": "2017",
 				"school": "5979a4a0fc13ae393900000a",
-				"form": "5979a61ffc13ae3939000016",
-				"bursary": {
-					"supported": false,
-					"paymentDetails": [{}]
-				}
+				"form": "5979a61ffc13ae3939000016"
 			}
 		]
 	},
@@ -167,27 +155,24 @@
 		"motherInitials": "FI",
 		"slug": "6/17/2000_MR_FI_HT",
 		"currentlyEnrolled": true,
+		"bursary": {
+			"supported": true,
+			"paymentDetails": [
+				{ "date": "7/12/2017", "amount": 19.76 },
+				{ "date": "7/16/2017", "amount": 71.82 },
+				{ "date": "7/24/2017", "amount": 65.51 }
+			]
+		},
 		"dynamic": [
 			{
 				"year": "2018",
 				"school": "5979a4a0fc13ae393900000a",
-				"form": "5979a61ffc13ae3939000012",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [{ "date": "7/12/2017", "amount": 19.76 }]
-				}
+				"form": "5979a61ffc13ae3939000012"
 			},
 			{
 				"year": "2018",
 				"school": "5979a4a0fc13ae393900000a",
-				"form": "5979a61ffc13ae3939000012",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [
-						{ "date": "7/16/2017", "amount": 71.82 },
-						{ "date": "7/24/2017", "amount": 65.51 }
-					]
-				}
+				"form": "5979a61ffc13ae3939000012"
 			}
 		]
 	},
@@ -204,27 +189,23 @@
 		"motherInitials": "NP",
 		"slug": "11/5/2014_IO_NP_BD",
 		"currentlyEnrolled": true,
+		"bursary": {
+			"supported": true,
+			"paymentDetails": [
+				{ "date": "7/18/2017", "amount": 50.26 },
+				{ "date": "8/4/2017", "amount": 73.17 }
+			]
+		},
 		"dynamic": [
 			{
 				"year": "2017",
 				"school": "5979a4a0fc13ae393900000b",
-				"form": "5979a61ffc13ae393900001a",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [
-						{ "date": "7/18/2017", "amount": 50.26 },
-						{ "date": "8/4/2017", "amount": 73.17 }
-					]
-				}
+				"form": "5979a61ffc13ae393900001a"
 			},
 			{
 				"year": "2018",
 				"school": "5979a4a0fc13ae393900000b",
-				"form": "5979a61ffc13ae393900001a",
-				"bursary": {
-					"supported": false,
-					"paymentDetails": [{}]
-				}
+				"form": "5979a61ffc13ae393900001a"
 			}
 		]
 	},
@@ -241,19 +222,19 @@
 		"motherInitials": "AA",
 		"slug": "2/6/2015_BF_AA_CC",
 		"currentlyEnrolled": false,
+		"bursary": {
+			"supported": true,
+			"paymentDetails": [
+				{ "date": "7/12/2017", "amount": 25.0 },
+				{ "date": "7/29/2017", "amount": 95.55 },
+				{ "date": "7/30/2017", "amount": 45.52 }
+			]
+		},
 		"dynamic": [
 			{
 				"year": "2017",
 				"school": "5979a4a0fc13ae393900000a",
-				"form": "5979a61ffc13ae3939000012",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [
-						{ "date": "7/12/2017", "amount": 25.0 },
-						{ "date": "7/29/2017", "amount": 95.55 },
-						{ "date": "7/30/2017", "amount": 45.52 }
-					]
-				}
+				"form": "5979a61ffc13ae3939000012"
 			}
 		]
 	},
@@ -270,15 +251,15 @@
 		"motherInitials": "MC",
 		"slug": "11/26/2003_CE_MC_GB",
 		"currentlyEnrolled": false,
+		"bursary": {
+			"supported": true,
+			"paymentDetails": [{ "date": "7/11/2017", "amount": 17.44 }]
+		},
 		"dynamic": [
 			{
 				"year": "2017",
 				"school": "5979a4a0fc13ae393900000b",
-				"form": "5979a61ffc13ae393900001a",
-				"bursary": {
-					"supported": true,
-					"paymentDetails": [{ "date": "7/11/2017", "amount": 17.44 }]
-				}
+				"form": "5979a61ffc13ae393900001a"
 			}
 		]
 	},
@@ -295,15 +276,15 @@
 		"motherInitials": "MM",
 		"slug": "6/21/2000_WE_MM_GM",
 		"currentlyEnrolled": true,
+		"bursary": {
+			"supported": false,
+			"paymentDetails": [{}]
+		},
 		"dynamic": [
 			{
 				"year": "2018",
 				"school": "5979a4a0fc13ae393900000a",
-				"form": "5979a61ffc13ae3939000012",
-				"bursary": {
-					"supported": false,
-					"paymentDetails": []
-				}
+				"form": "5979a61ffc13ae3939000012"
 			}
 		]
 	}

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import _ from 'lodash';
 import { $ } from './bling';
 
 const mapOptions = {
@@ -9,7 +10,7 @@ const mapOptions = {
 function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
 	axios.get(`/api/v1/schools/map`).then(res => {
 		const places = res.data;
-		console.log(places);
+		// console.log(places);
 		if (!places.length) {
 			alert('no schools here!');
 			return;
@@ -23,7 +24,10 @@ function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
 			const [placeLng, placeLat] = place.location.coordinates;
 			const position = { lat: placeLat, lng: placeLng };
 			bounds.extend(position);
-			console.log(place.markerColor);
+			place.count = place.students.reduce((n, b) => {
+				return n + (b.bursary.supported === true);
+			}, 0);
+			console.log(place.count);
 			const marker = new google.maps.Marker({
 				map: map,
 				icon: place.markerColor,
@@ -46,6 +50,7 @@ function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
 						</a>
 						<p>Project: ${this.place.project}</p>
 						<p>Number of Students: ${this.place.students.length}</p>
+						<p>Bursary Students: ${this.place.count}</p>
           </div>
         `;
 				infoWindow.setContent(html);

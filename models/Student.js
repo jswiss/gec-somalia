@@ -41,6 +41,15 @@ const studentSchema = new mongoose.Schema({
 		ref: 'School',
 		required: true,
 	},
+	bursary: {
+		supported: { type: Boolean, required: true },
+		paymentDetails: [
+			{
+				date: Date,
+				amount: Number,
+			},
+		],
+	},
 	dynamic: [
 		{
 			year: { type: Number, required: true, min: 2017, max: 2020 },
@@ -53,15 +62,6 @@ const studentSchema = new mongoose.Schema({
 				type: mongoose.Schema.ObjectId,
 				ref: 'Form',
 				required: true,
-			},
-			bursary: {
-				supported: { type: Boolean, required: true },
-				paymentDetails: [
-					{
-						date: Date,
-						amount: Number,
-					},
-				],
 			},
 			attendance: [
 				{
