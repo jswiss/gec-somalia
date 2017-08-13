@@ -10,11 +10,22 @@ mixin schoolForm(school = {})
     select(type="select" name="project" value=school.project)
       option SOMGEP
       option EGEP
+    label(for="type") Project
+    select(type="select" name="type" value=school.type)
+      option Primary
+      option Secondary
+    - const formChoices = ['p1','p2','p3','p4','p5','p6','p7','p8','s1','s2','s3','s4']
+    - const forms = school.forms || []
+    ul.tags
+      each form in formChoices
+        .tag.tag__choice
+          input(type="checkbox" id=form value=form name="form" checked=(forms.includes(form)))
+          label(for=form) #{form}
     - const ratings = ['Red', 'Amber', 'Green']
     - const rag = school.rag || []
-    ul.rag
+    ul.tags
       each rating in ratings
-        .rag.rag__choice
+        .tag.tag__choice
           input(type="radio" id=rating value=rating name="rag" checked=(rag.includes(rating)))
           label(for=rating) #{rating}
     //- image upload

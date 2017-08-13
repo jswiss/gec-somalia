@@ -161,7 +161,7 @@ const schoolSchema = new mongoose.Schema(
 		type: {
 			type: String,
 			required: 'every school needs a type!',
-			enum: ['primary', 'secondary'],
+			enum: ['Primary', 'Secondary'],
 		},
 	},
 	{
