@@ -14,6 +14,7 @@ mixin schoolForm(school = {})
     select(type="select" name="type" value=school.type)
       option Primary
       option Secondary
+      //- TODO: add validation here so Primary schools have p1, etc
     - const formChoices = ['p1','p2','p3','p4','p5','p6','p7','p8','s1','s2','s3','s4']
     - const forms = school.forms || []
     ul.tags
@@ -49,7 +50,7 @@ mixin schoolForm(school = {})
     input(type="text" id="lng" name="location[coordinates][0]" value=(school.location && school.location.coordinates[0]) required)
     label(for="lat") Address Latitude
     input(type="text" id="lat" name="location[coordinates][1]" value=(school.location && school.location.coordinates[1]) required)
-    - const choices = ['Rural', 'Urban', 'Primary', 'Secondary', 'Girls Only', 'Private']
+    - const choices = ['Rural', 'Urban', 'Girls Only', 'Private']
     - const tags = school.tags || []
     ul.tags
       each choice in choices

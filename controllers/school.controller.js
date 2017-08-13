@@ -138,7 +138,7 @@ exports.createSchool = async (req, res) => {
 	const school = await new School(req.body).save();
 	req.flash(
 		'success',
-		`successfully created ${school.name}! Want to add teacher, class, and student info?`
+		`successfully created <strong>${school.name}</strong>! Want to add <a href="/school/${school.slug}/teachers/add">teacher</a>, or <a href="/school/${school.slug}/students/add">student</a> info?`
 	);
 	res.redirect(`/school/${school.slug}`);
 };
