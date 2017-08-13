@@ -16,9 +16,9 @@ router.get('/schools', catchErrors(schoolController.getSchools));
 router.get('/school/:slug', catchErrors(schoolController.getSchoolBySlug));
 
 // Add/edit school and sub docs
-router.get('/add', schoolController.addSchool);
+router.get('/school/add', schoolController.addSchool);
 router.post(
-	'/add',
+	'/school/add',
 	schoolController.upload,
 	catchErrors(schoolController.resize),
 	catchErrors(schoolController.createSchool)
@@ -27,7 +27,7 @@ router.post(
 router.get('/schools/:id/edit', catchErrors(schoolController.editSchool));
 
 router.post(
-	'/add/:id',
+	'/school/add/:id',
 	schoolController.upload,
 	catchErrors(schoolController.resize),
 	catchErrors(schoolController.updateSchool)
