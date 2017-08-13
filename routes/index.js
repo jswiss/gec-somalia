@@ -26,6 +26,13 @@ router.post(
 
 router.get('/schools/:id/edit', catchErrors(schoolController.editSchool));
 
+router.post(
+	'/add/:id',
+	schoolController.upload,
+	catchErrors(schoolController.resize),
+	catchErrors(schoolController.updateSchool)
+);
+
 // map
 router.get('/map', schoolController.mapPage);
 

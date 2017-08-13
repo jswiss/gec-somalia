@@ -101,6 +101,20 @@ exports.editSchool = async (req, res) => {
 	});
 };
 
+exports.updateStore = async (req, res) => {
+	req.body.location.type = 'Point';
+	const school = await School.findOneAndUpdate(
+		{ _id: req.params.id },
+		req.body,
+		{ new: true, runValidators: true }
+	).exec();
+	req.flash(
+		'success',
+		`successfully updated <strong>${school.name}</strong><a href="/school/${school.slug}">View School =></a>`
+	);
+	res.redirect(`/schools/${school._id}/edit`);
+};
+
 exports.upload = multer(multerOptions).single('photo');
 
 exports.resize = async (req, res, next) => {

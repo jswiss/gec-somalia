@@ -8,8 +8,15 @@ mixin teacherForm(school)
     input(type="radio" name="headTeacher" value="true")#yes
     label(for="no") No
     input(type="radio" name="headTeacher" value="false")#no
+    - const genders = ['M', 'F']
+    - const gender = teacher.gender || []
+    ul.tags
+      each g in gender
+        .tag.tag__choice
+          input(type="radio" id=g value=choice name="genders" checked=(genders.includes(g)))
+          label(for=chogice) #{g}
     - const choices = ['Maths', 'English', 'Somali', 'Social Studies','History', 'Science', 'Physics', 'Islamic Studies', 'Arabic']
-    - const subjects = school.subjects || []
+    - const subjects = teacher.subjects || []
     ul.tags
       each choice in choices
         .tag.tag__choice
