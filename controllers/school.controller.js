@@ -101,7 +101,7 @@ exports.editSchool = async (req, res) => {
 	});
 };
 
-exports.updateStore = async (req, res) => {
+exports.updateSchool = async (req, res) => {
 	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },

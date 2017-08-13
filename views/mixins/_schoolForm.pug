@@ -22,11 +22,11 @@ mixin schoolForm(school = {})
           input(type="checkbox" id=form value=form name="form" checked=(forms.includes(form)))
           label(for=form) #{form}
     - const ratings = ['Red', 'Amber', 'Green']
-    - const rag = school.rag || []
+    - const rag = (school.rag && school.rag.rating) || []
     ul.tags
       each rating in ratings
         .tag.tag__choice
-          input(type="radio" id=rating value=rating name="rag" checked=(rag.includes(rating)))
+          input(type="radio" id=rating value=rating name="rag[rating]" checked=(rag.includes(rating)))
           label(for=rating) #{rating}
     //- image upload
     label(for="upload") Photo

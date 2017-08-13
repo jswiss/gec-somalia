@@ -6,10 +6,7 @@ const timestamps = require('mongoose-timestamp');
 
 const schoolSchema = new mongoose.Schema(
 	{
-		markerColor: {
-			type: String,
-			required: 'we need a marker color!!!!!',
-		},
+		markerColor: String,
 		name: {
 			type: String,
 			trim: true,
@@ -114,7 +111,7 @@ const schoolSchema = new mongoose.Schema(
 				},
 				rating: {
 					type: String,
-					enum: ['red', 'orange', 'green'],
+					enum: ['Red', 'Orange', 'Green'],
 				},
 			},
 		],
@@ -138,12 +135,12 @@ const schoolSchema = new mongoose.Schema(
 			district: {
 				type: String,
 				trim: true,
-				required: 'You must provide a district!',
+				// required: 'You must provide a district!',
 			},
 			region: {
 				type: String,
 				trim: true,
-				required: 'You must provide a region!',
+				// required: 'You must provide a region!',
 			},
 			state: {
 				type: String,
