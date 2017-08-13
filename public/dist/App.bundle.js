@@ -969,24 +969,27 @@ module.exports = __webpack_amd_options__;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
-function autocomplete(input, latInput, lngInput) {
-  console.log(input, latInput, lngInput);
-  if (!input) return;
-  var dropdown = new google.maps.places.Autocomplete(input);
+function autocomplete(input, latInput, lngInput, villageInput, districtInput) {
+	console.log(input, latInput, lngInput, villageInput, districtInput);
+	if (!input) return;
+	var dropdown = new google.maps.places.Autocomplete(input);
 
-  dropdown.addListener('place_changed', function () {
-    var place = dropdown.getPlace();
-    console.log(place);
-    latInput.value = place.geometry.location.lat();
-    lngInput.value = place.geometry.location.lng();
-  });
+	dropdown.addListener('place_changed', function () {
+		var place = dropdown.getPlace();
+		console.log(place);
+		latInput.value = place.geometry.location.lat();
+		lngInput.value = place.geometry.location.lng();
+		villageInput.value = place.address_components[0].long_name;
+		districtInput.value = place.address_components[1].long_name;
+		console.log(place);
+	});
 
-  // Disable auto form send if someone hits enter
-  input.on('keydown', function (e) {
-    if (e.keyCode === 13) e.preventDefault();
-  });
+	// Disable auto form send if someone hits enter
+	input.on('keydown', function (e) {
+		if (e.keyCode === 13) e.preventDefault();
+	});
 }
 
 exports.default = autocomplete;
@@ -12322,7 +12325,7 @@ var _map2 = _interopRequireDefault(_map);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _autocomplete2.default)((0, _bling.$)('#address'), (0, _bling.$)('#lat'), (0, _bling.$)('#lng'));
+(0, _autocomplete2.default)((0, _bling.$)('#address'), (0, _bling.$)('#lat'), (0, _bling.$)('#lng'), (0, _bling.$)('#village'), (0, _bling.$)('#district'));
 
 (0, _typeAhead2.default)((0, _bling.$)('.search'));
 

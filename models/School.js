@@ -135,17 +135,7 @@ const schoolSchema = new mongoose.Schema(
 			district: {
 				type: String,
 				trim: true,
-				// required: 'You must provide a district!',
-			},
-			region: {
-				type: String,
-				trim: true,
-				// required: 'You must provide a region!',
-			},
-			state: {
-				type: String,
-				trim: true,
-				required: 'You must provide a state!',
+				required: 'You must provide a district!',
 			},
 			coordinates: [
 				{

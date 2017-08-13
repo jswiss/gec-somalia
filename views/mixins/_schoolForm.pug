@@ -35,21 +35,17 @@ mixin schoolForm(school = {})
       if school.photo
         img(src=`/uploads/${school.photo}` alt=school.name width=200)
     //- TODO: Cascade select here for state, region, and district
-    label(for="village") Village
-    input(type="text" id="village" name="location[village]" value=(school.location && school.location.village))
-    label(for="district") District
-    input(type="text" id="district" name="location[district]" value=(school.location && school.location.district))
-    label(for="region") Region
-    input(type="text" id="region" name="location[region]" value=(school.location && school.location.region))
-    label(for="state") State
-    input(type="text" id="state" name="location[state]" value=(school.location && school.location.state))
-    //- TODO: Get coordinates through selecting on map
     label(for="address") Address
     input(type="text" id="address" name="location[address]" value=(school.location && school.location.address)) 
     label(for="lng") Address Longitude
     input(type="text" id="lng" name="location[coordinates][0]" value=(school.location && school.location.coordinates[0]) required)
     label(for="lat") Address Latitude
     input(type="text" id="lat" name="location[coordinates][1]" value=(school.location && school.location.coordinates[1]) required)
+    label(for="village") Village
+    input(type="text" id="village" name="location[village]" value=(school.location && school.location.village) required)
+    label(for="district") District
+    input(type="text" id="district" name="location[district]" value=(school.location && school.location.district) required)
+    //- TODO: Get coordinates through selecting on map
     - const choices = ['Rural', 'Urban', 'Girls Only', 'Private']
     - const tags = school.tags || []
     ul.tags
