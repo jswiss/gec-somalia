@@ -9,6 +9,8 @@
 			{ "date": "8/9/2017", "rating": "red" },
 			{ "date": "9/23/2017", "rating": "green" }
 		],
+		"forms": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+		"type": "primary",
 		"markerColor": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
 		"location": {
 			"village": "Puce",
@@ -29,6 +31,8 @@
 			{ "date": "10/10/2017", "rating": "orange" },
 			{ "date": "8/11/2017", "rating": "orange" }
 		],
+		"forms": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+		"type": "primary",
 		"markerColor": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
 		"location": {
 			"village": "Aquamarine",
@@ -41,11 +45,13 @@
 	},
 	{
 		"_id": "5979a4a0fc13ae393900000c",
-		"slug": "ondricka-and-sons",
+		"slug": "ondricka-and-sons-secondary",
 		"project": "SOMGEP",
-		"name": "Ondricka and Sons",
+		"name": "Ondricka and Sons Secondary",
 		"code": "OaS",
 		"rag": [{ "date": "8/18/2017", "rating": "orange" }],
+		"forms": ["s1", "s2", "s3", "s4"],
+		"type": "secondary",
 		"markerColor": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
 		"location": {
 			"village": "Turquoise",
@@ -66,6 +72,8 @@
 			{ "date": "7/26/2017", "rating": "orange" },
 			{ "date": "8/19/2017", "rating": "red" }
 		],
+		"forms": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+		"type": "primary",
 		"markerColor": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
 		"location": {
 			"village": "Turquoise",
@@ -88,6 +96,8 @@
 			{ "date": "10/5/2017", "rating": "orange" },
 			{ "date": "8/3/2017", "rating": "red" }
 		],
+		"forms": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+		"type": "primary",
 		"markerColor": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
 		"location": {
 			"village": "Aquamarine",

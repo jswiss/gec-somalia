@@ -10,7 +10,7 @@ const School = require('../models/School');
 // const User = require('../models/User');
 const Student = require('../models/Student');
 const Teacher = require('../models/Teacher');
-const Form = require('../models/Form');
+// const Form = require('../models/Form');
 
 const schools = JSON.parse(
 	fs.readFileSync(__dirname + '/school-data.json', 'utf-8')
@@ -19,9 +19,9 @@ const students = JSON.parse(
 	fs.readFileSync(__dirname + '/student-data.json', 'utf-8')
 );
 // const users = JSON.parse(fs.readFileSync(__dirname + '/user-data.json', 'utf-8'));
-const forms = JSON.parse(
-	fs.readFileSync(__dirname + '/form-data.json', 'utf-8')
-);
+// const forms = JSON.parse(
+// 	fs.readFileSync(__dirname + '/form-data.json', 'utf-8')
+// );
 const teachers = JSON.parse(
 	fs.readFileSync(__dirname + '/teacher-data.json', 'utf-8')
 );
@@ -32,7 +32,7 @@ async function deleteData() {
 	// await User.remove();
 	await Student.remove();
 	await Teacher.remove();
-	await Form.remove();
+	// await Form.remove();
 	console.log(
 		'Data Deleted. To load sample data, run\n\n\t npm run sample\n\n'
 	);
@@ -45,7 +45,7 @@ async function loadData() {
 		// await User.insertMany(users);
 		await Student.insertMany(students);
 		await Teacher.insertMany(teachers);
-		await Form.insertMany(forms);
+		// await Form.insertMany(forms);
 		console.log('👍👍👍👍👍👍👍👍 Done!');
 		process.exit();
 	} catch (e) {

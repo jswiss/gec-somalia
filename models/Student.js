@@ -58,11 +58,7 @@ const studentSchema = new mongoose.Schema({
 				ref: 'School',
 				required: true,
 			},
-			form: {
-				type: mongoose.Schema.ObjectId,
-				ref: 'Form',
-				required: true,
-			},
+			form: String,
 			attendance: [
 				{
 					date: Date,

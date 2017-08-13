@@ -33,7 +33,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000a",
-		"form": "5979a61ffc13ae3939000012",
+		"form": ["p1", "p2"],
 		"gender": "F",
 		"birthdate": "1970",
 		"highestEducation": "teacher training college"
@@ -67,7 +67,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000a",
-		"form": "5979a61ffc13ae3939000014",
+		"form": ["p2", "p3", "p4"],
 		"gender": "F",
 		"birthdate": "1985",
 		"highestEducation": "graduate school"
@@ -91,7 +91,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000a",
-		"form": "5979a61ffc13ae3939000016",
+		"form": ["p3"],
 		"gender": "M",
 		"birthdate": "1970",
 		"highestEducation": "graduate school"
@@ -119,7 +119,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000b",
-		"form": "5979a61ffc13ae3939000018",
+		"form": ["p4", "p5", "p6"],
 		"gender": "F",
 		"birthdate": "1970",
 		"highestEducation": "teacher training college"
@@ -144,7 +144,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000b",
-		"form": "5979a61ffc13ae393900001a",
+		"form": ["p1"],
 		"gender": "F",
 		"birthdate": "1970",
 		"highestEducation": "teacher training college"
@@ -175,7 +175,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000b",
-		"form": "5979a61ffc13ae393900001c",
+		"form": ["p2"],
 		"gender": "F",
 		"birthdate": "1970",
 		"highestEducation": "teacher training college"
@@ -213,7 +213,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000b",
-		"form": "5979a61ffc13ae393900001e",
+		"form": ["p6", "p7", "p8"],
 		"gender": "F",
 		"birthdate": "1970",
 		"highestEducation": "university"
@@ -252,7 +252,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000b",
-		"form": "5979a61ffc13ae3939000020",
+		"form": ["p3"],
 		"gender": "M",
 		"birthdate": "1970",
 		"highestEducation": "teacher training college"
@@ -282,7 +282,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000c",
-		"form": "5979a61ffc13ae3939000022",
+		"form": ["s1", "s2", "s3"],
 		"gender": "F",
 		"birthdate": "1970",
 		"highestEducation": "graduate school"
@@ -308,7 +308,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000c",
-		"form": "5979a61ffc13ae3939000024",
+		"form": ["s3", "s4"],
 		"gender": "F",
 		"birthdate": "1985",
 		"highestEducation": "teacher training college"
@@ -326,7 +326,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000c",
-		"form": "5979a61ffc13ae3939000026",
+		"form": ["s1"],
 		"gender": "F",
 		"birthdate": "1985",
 		"highestEducation": "graduate school"
@@ -362,7 +362,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000c",
-		"form": "5979a61ffc13ae3939000028",
+		"form": ["s2"],
 		"gender": "M",
 		"birthdate": "1970",
 		"highestEducation": "teacher training college"
@@ -396,7 +396,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000d",
-		"form": "5979a61ffc13ae393900002a",
+		"form": ["p3", "p4"],
 		"gender": "F",
 		"birthdate": "1985",
 		"highestEducation": "teacher training college"
@@ -425,7 +425,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000d",
-		"form": "5979a61ffc13ae393900002c",
+		"form": ["p1", "p2", "p3", "p4"],
 		"gender": "F",
 		"birthdate": "1970",
 		"highestEducation": "graduate school"
@@ -450,7 +450,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000e",
-		"form": "5979a61ffc13ae393900002e",
+		"form": ["p5", "p6", "p7", "p8"],
 		"gender": "M",
 		"birthdate": "1985",
 		"highestEducation": "teacher training college"
@@ -483,7 +483,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000e",
-		"form": "5979a9bcfc13ae418d000028",
+		"form": ["p7"],
 		"gender": "M",
 		"birthdate": "1985",
 		"highestEducation": "teacher training college"
@@ -518,7 +518,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000e",
-		"form": "5979a61ffc13ae3939000030",
+		"form": ["p8"],
 		"gender": "M",
 		"birthdate": "1985",
 		"highestEducation": "teacher training college"
@@ -556,7 +556,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000e",
-		"form": "5979a61ffc13ae3939000032",
+		"form": ["p3"],
 		"gender": "F",
 		"birthdate": "1985",
 		"highestEducation": "teacher training college"
@@ -574,7 +574,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000e",
-		"form": "5979a61ffc13ae3939000034",
+		"form": ["p1"],
 		"gender": "M",
 		"birthdate": "1970",
 		"highestEducation": "university"
@@ -608,7 +608,7 @@
 			}
 		],
 		"school": "5979a4a0fc13ae393900000e",
-		"form": "5979a61ffc13ae3939000036",
+		"form": ["p1"],
 		"gender": "M",
 		"birthdate": "1970",
 		"highestEducation": "secondary"

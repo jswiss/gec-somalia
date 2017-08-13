@@ -20,6 +20,86 @@ const schoolSchema = new mongoose.Schema(
 			trim: true,
 			required: 'Every school needs a unique code!',
 		},
+		forms: [
+			{
+				type: String,
+				required: true,
+				enum: [
+					'p1',
+					'p2',
+					'p3',
+					'p4',
+					'p5',
+					'p6',
+					'p7',
+					'p8',
+					's1',
+					's2',
+					's3',
+					's4',
+					'p1-a',
+					'p2-a',
+					'p3-a',
+					'p4-a',
+					'p5-a',
+					'p6-a',
+					'p7-a',
+					'p8-a',
+					's1-a',
+					's2-a',
+					's3-a',
+					's4-a',
+					'p1-b',
+					'p2-b',
+					'p3-b',
+					'p4-b',
+					'p5-b',
+					'p6-b',
+					'p7-b',
+					'p8-b',
+					's1-b',
+					's2-b',
+					's3-b',
+					's4-b',
+					'p1-c',
+					'p2-c',
+					'p3-c',
+					'p4-c',
+					'p5-c',
+					'p6-c',
+					'p7-c',
+					'p8-c',
+					's1-c',
+					's2-c',
+					's3-c',
+					's4-c',
+					'p1-d',
+					'p2-d',
+					'p3-d',
+					'p4-d',
+					'p5-d',
+					'p6-d',
+					'p7-d',
+					'p8-d',
+					's1-d',
+					's2-d',
+					's3-d',
+					's4-d',
+					'p1-e',
+					'p2-e',
+					'p3-e',
+					'p4-e',
+					'p5-e',
+					'p6-e',
+					'p7-e',
+					'p8-e',
+					's1-e',
+					's2-e',
+					's3-e',
+					's4-e',
+				],
+			},
+		],
 		slug: String,
 		project: {
 			type: String,
@@ -78,6 +158,11 @@ const schoolSchema = new mongoose.Schema(
 			],
 		},
 		photo: String,
+		type: {
+			type: String,
+			required: 'every school needs a type!',
+			enum: ['primary', 'secondary'],
+		},
 	},
 	{
 		// makes virtuals accessible as JSON or objects
@@ -136,13 +221,13 @@ schoolSchema.statics.getTagsList = function() {
 	]);
 };
 
-schoolSchema.virtual('forms', {
-	// mongoose to query Form model
-	ref: 'Form',
-	// find matching school _id and school field in Review
-	localField: '_id',
-	foreignField: 'school',
-});
+// schoolSchema.virtual('forms', {
+// 	// mongoose to query Form model
+// 	ref: 'Form',
+// 	// find matching school _id and school field in Review
+// 	localField: '_id',
+// 	foreignField: 'school',
+// });
 
 schoolSchema.virtual('teachers', {
 	ref: 'Teacher',
@@ -157,7 +242,7 @@ schoolSchema.virtual('students', {
 });
 
 function autopopulate(next) {
-	this.populate('forms');
+	// this.populate('forms');
 	this.populate('students');
 	this.populate('teachers');
 	next();

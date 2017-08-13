@@ -1,0 +1,49 @@
+mixin schoolForm(school = {})
+  form(action=`/add/${school._id || ''}` method="POST" class="card"
+    enctype="multipart/form-data")
+    //- pre= h.dump(school)
+    label(for="name") Name
+    input(type="text" name="name" value=school.name)
+    label(for="code") Code
+    input(type="text" name="code" value=school.code)
+    label(for="project") Project
+    select(type="select" name="project" value=school.project)
+      option SOMGEP
+      option EGEP
+    - const ratings = ['Red', 'Amber', 'Green']
+    - const rag = school.rag || []
+    ul.rag
+      each rating in ratings
+        .rag.rag__choice
+          input(type="radio" id=rating value=rating name="rag" checked=(rag.includes(rating)))
+          label(for=rating) #{rating}
+    //- image upload
+    label(for="upload") Photo
+      input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
+      if school.photo
+        img(src=`/uploads/${school.photo}` alt=school.name width=200)
+    //- TODO: Cascade select here for state, region, and district
+    label(for="village") Village
+    input(type="text" id="village" name="location[village]" value=(school.location && school.location.village))
+    label(for="district") District
+    input(type="text" id="district" name="location[district]" value=(school.location && school.location.district))
+    label(for="region") Region
+    input(type="text" id="region" name="location[region]" value=(school.location && school.location.region))
+    label(for="state") State
+    input(type="text" id="state" name="location[state]" value=(school.location && school.location.state))
+    //- TODO: Get coordinates through selecting on map
+    label(for="address") Address
+    //- bodyParser urlEncoded allows the location[address] to be read as location.address
+    input(type="text" id="address" name="location[address]" value=(school.location && school.location.address)) 
+    label(for="lng") Address Longitude
+    input(type="text" id="lng" name="location[coordinates][0]" value=(school.location && school.location.coordinates[0]) required)
+    label(for="lat") Address Latitude
+    input(type="text" id="lat" name="location[coordinates][1]" value=(school.location && school.location.coordinates[1]) required)
+    - const choices = ['Rural', 'Urban', 'Primary', 'Secondary', 'Girls Only', 'Private']
+    - const tags = school.tags || []
+    ul.tags
+      each choice in choices
+        .tag.tag__choice
+          input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
+          label(for=choice) #{choice}
+    input(type="submit" value="Save →" class="button")
