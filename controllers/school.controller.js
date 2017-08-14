@@ -102,6 +102,8 @@ exports.editSchool = async (req, res) => {
 };
 
 exports.updateSchool = async (req, res) => {
+	console.log(req.body.rag);
+	console.log(req.body.rag.rating);
 	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },
