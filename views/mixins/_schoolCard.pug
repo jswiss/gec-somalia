@@ -20,7 +20,7 @@ mixin schoolCard(school = {})
       .school__actions
         //- if a user is logged in, show the heart
         //- if user
-        .school__action.school__action--heart
+        .school__action.school__action--rag
           //- good to use form tag in case JS fails
           a(href=`/schools/${school._id}/edit/rag`)
 
@@ -32,9 +32,16 @@ mixin schoolCard(school = {})
           a(href=`/schools/${school._id}/edit`)
             != h.icon('pencil')
 
+        if school.teachers
+          .school__action.school__action--teacher
+            a(href=`/schools/${school._id}/edit/teachers`)
+              != h.icon('teacher')
+            span= school.teachers.length
+
         if school.students
           .school__action.school__action--count
-            != h.icon('student')
+            a(href=`/schools/${school._id}/edit/students`)
+              != h.icon('student')
             span= school.students.length
             
       img(src=`/uploads/${school.photo || 'school.png'}`)
