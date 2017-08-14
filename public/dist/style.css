@@ -1130,4 +1130,7 @@ pre.error {
   line-height: 3;
   white-space: pre-line; }
 
+.hidden {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map*/

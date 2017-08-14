@@ -23,10 +23,7 @@ mixin schoolCard(school = {})
         .school__action.school__action--rag
           //- good to use form tag in case JS fails
           a(href=`/schools/${school._id}/edit/rag`)
-
-            //- button instead of input, because we want to put html inside the button, and you can't do that with input
-            button.heart__button(type="submit" name="caution")
-              != h.icon('caution')
+            != h.icon('caution')
         //- if user && school.author.equals(user._id)
         .school__action.school__action--edit
           a(href=`/schools/${school._id}/edit`)

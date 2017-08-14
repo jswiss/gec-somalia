@@ -5,6 +5,7 @@ block content
   
   form(action=`/school/add/${school._id || ''}` method="POST" class="card"
     enctype="multipart/form-data")
+    input.hidden(type="text" id="address" name="location[address]" value=(store.location && store.location.address)) 
     - const rag = (school.rag && school.rag.rating) || []
     ul.tags
       //- each rating in ratings
