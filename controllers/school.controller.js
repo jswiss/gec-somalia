@@ -125,7 +125,6 @@ exports.editRag = async (req, res) => {
 };
 
 exports.updateRag = async (req, res) => {
-	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },
 		{ $push: { rag: req.body.rag } }

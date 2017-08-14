@@ -848,6 +848,7 @@ label {
     padding: 1.2rem 2rem 1rem 2rem;
     display: block;
     display: flex;
+    height: 30px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -857,7 +858,7 @@ label {
 
 .nav__link svg {
     width: 40px;
-    height: 50px;
+    height: 30px;
     transition: all 0.2s;
     fill: white;
     margin-bottom: 1rem;
@@ -881,6 +882,7 @@ label {
 
 .nav__link--logo svg {
     width: 200px;
+    height: 30px;
     margin: 0;
 }
 
@@ -891,9 +893,11 @@ label {
     }
     .nav__link svg {
         width: 30px;
+        height: 30px;
     }
     .nav__link--logo svg {
         width: 100px;
+        height: 30px;
     }
 }
 

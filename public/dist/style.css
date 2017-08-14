@@ -635,6 +635,7 @@ label {
     border-bottom: 5px solid transparent; }
     .nav__link svg {
       width: 40px;
+      height: 50px;
       transition: all 0.2s;
       fill: white;
       margin-bottom: 1rem; }
@@ -650,14 +651,16 @@ label {
           transform: none; }
     .nav__link--logo svg {
       width: 200px;
-      margin: 0; }
+      margin: 0;
+      height: 50px; }
 
 @media all and (max-width: 1200px) {
   .nav__link {
     padding-left: 1rem;
     padding-right: 1rem; }
     .nav__link svg {
-      width: 30px; }
+      width: 30px;
+      height: 50px; }
     .nav__link--logo svg {
       width: 100px; } }
 

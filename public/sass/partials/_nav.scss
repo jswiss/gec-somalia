@@ -29,6 +29,7 @@
         border-bottom: 5px solid transparent;
         svg {
             width: 40px;
+            height: 50px;
             transition: all 0.2s;
             fill: white;
             margin-bottom: 1rem;
@@ -51,6 +52,7 @@
             svg {
                 width: 200px;
                 margin: 0;
+                height: 50px;
             }
         }
     }
@@ -63,6 +65,7 @@
             padding-right: 1rem;
             svg {
                 width: 30px;
+                height: 50px;
             }
             &--logo {
                 svg {
