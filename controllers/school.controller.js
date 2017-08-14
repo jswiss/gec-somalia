@@ -102,8 +102,6 @@ exports.editSchool = async (req, res) => {
 };
 
 exports.updateSchool = async (req, res) => {
-	console.log(req.body.rag);
-	console.log(req.body.rag.rating);
 	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },
@@ -115,6 +113,28 @@ exports.updateSchool = async (req, res) => {
 		`successfully updated <strong>${school.name}</strong><a href="/school/${school.slug}">View School =></a>`
 	);
 	res.redirect(`/schools/${school._id}/edit`);
+};
+
+exports.editRag = async (req, res) => {
+	const school = await School.findOne({ _id: req.params.id });
+
+	res.render('editRag', {
+		title: `Update ${school.name}'s RAG Rating`,
+		school,
+	});
+};
+
+exports.updateRag = async (req, res) => {
+	req.body.location.type = 'Point';
+	const school = await School.findOneAndUpdate(
+		{ _id: req.params.id },
+		{ $push: { rag: req.body.rag } }
+	).exec();
+	req.flash(
+		'success',
+		`successfully updated <strong>${school.name}'s RAG rating</strong><a href="/school/${school.slug}">View School =></a>`
+	);
+	res.redirect(`/schools`);
 };
 
 exports.upload = multer(multerOptions).single('photo');
