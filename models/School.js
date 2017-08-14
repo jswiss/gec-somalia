@@ -7,6 +7,7 @@ const timestamps = require('mongoose-timestamp');
 const schoolSchema = new mongoose.Schema(
 	{
 		markerColor: String,
+		// timestamps: true,
 		name: {
 			type: String,
 			trim: true,

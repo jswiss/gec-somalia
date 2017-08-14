@@ -53,6 +53,7 @@ const teacherSchema = new mongoose.Schema({
 	},
 	// put project support tags here
 	tags: [String],
+	// timestamps: true,
 });
 
 teacherSchema.plugin(timestamps);

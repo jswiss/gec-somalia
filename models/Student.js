@@ -50,6 +50,7 @@ const studentSchema = new mongoose.Schema({
 			},
 		],
 	},
+	// timestamps: true,
 	dynamic: [
 		{
 			year: { type: Number, required: true, min: 2017, max: 2020 },
