@@ -757,6 +757,7 @@ label {
   font-size: 10px; }
   .school__action svg {
     width: 25px;
+    height: 25px;
     fill: white; }
   .school__action--edit a {
     border-bottom: 0; }
