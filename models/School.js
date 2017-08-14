@@ -183,9 +183,10 @@ schoolSchema.pre('save', async function(next) {
 		next(); // skip it
 		return; // stop this function from running
 	}
+
 	this.markerColor = `http://maps.google.com/mapfiles/ms/icons/${this.rag[
 		this.rag.length - 1
-	].rating}-dot.png`;
+	].rating}-dot.png`.toLowerCase();
 	// this requires a real function
 	this.slug = slug(this.name);
 	// check if the slug is unique

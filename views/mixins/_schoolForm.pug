@@ -1,5 +1,5 @@
 mixin schoolForm(school = {})
-  form(action=`/add/${school._id || ''}` method="POST" class="card"
+  form(action=`/school/add/${school._id || ''}` method="POST" class="card"
     enctype="multipart/form-data")
     //- pre= h.dump(school)
     label(for="name") Name
@@ -22,13 +22,17 @@ mixin schoolForm(school = {})
         .tag.tag__choice
           input(type="checkbox" id=form value=form name="form" checked=(forms.includes(form)))
           label(for=form) #{form}
-    - const ratings = ['Red', 'Amber', 'Green']
+    //- - const ratings = ['Red', 'Amber', 'Green']
     - const rag = (school.rag && school.rag.rating) || []
     ul.tags
-      each rating in ratings
-        .tag.tag__choice
-          input(type="radio" id=rating value=rating name="rag[rating]" checked=(rag.includes(rating)))
-          label(for=rating) #{rating}
+      //- each rating in ratings
+      .tag.tag__choice
+        input(type="radio" id=rating value="Red" name="rag[rating]" checked=(rag.includes(rating)))
+        label(for=rating) Red
+        input(type="radio" id=rating value="Orange" name="rag[rating]" checked=(rag.includes(rating)))
+        label(for=rating) Amber
+        input(type="radio" id=rating value="Green" name="rag[rating]" checked=(rag.includes(rating)))
+        label(for=rating) Green
     //- image upload
     label(for="upload") Photo
       input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")

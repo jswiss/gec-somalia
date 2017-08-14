@@ -9,6 +9,7 @@ const mapOptions = {
 function loadPlaces(map, lat = 9.257857, lng = 47.805819) {
 	axios.get(`/api/v1/schools/map`).then(res => {
 		const places = res.data;
+		console.log(places);
 		// console.log(places);
 		if (!places.length) {
 			alert('no schools here!');

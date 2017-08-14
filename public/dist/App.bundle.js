@@ -1017,6 +1017,7 @@ function loadPlaces(map) {
 
 	_axios2.default.get('/api/v1/schools/map').then(function (res) {
 		var places = res.data;
+		console.log(places);
 		// console.log(places);
 		if (!places.length) {
 			alert('no schools here!');
