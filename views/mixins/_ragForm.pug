@@ -1,0 +1,25 @@
+mixin ragForm(school)
+  form(action=`/school/add/${school._id || ''}` method="POST" class="card"
+    enctype="multipart/form-data")
+    label.hidden(for="address") Address
+    input.hidden(type="text" id="address" name="location[address]" value=(school.location && school.location.address)) 
+    label.hidden(for="lng") Address Longitude
+    input.hidden(type="text" id="lng" name="location[coordinates][0]" value=(school.location && school.location.coordinates[0]) required)
+    label.hidden(for="lat") Address Latitude
+    input.hidden(type="text" id="lat" name="location[coordinates][1]" value=(school.location && school.location.coordinates[1]) required)
+    label.hidden(for="village") Village
+    input.hidden(type="text" id="village" name="location[village]" value=(school.location && school.location.village) required)
+    label.hidden(for="district") District
+    input.hidden(type="text" id="district" name="location[district]" value=(school.location && school.location.district) required)
+    - const rag = school.rag || []
+    ul.tags
+      //- each rating in ratings
+      .tag.tag__choice
+        input(type="radio" id=rating value="Red" name="rag[rating]" checked=(rag.rating(rating)))
+        label(for=rating) Red
+        input(type="radio" id=rating value="Orange" name="rag[rating]" checked=(rag.includes(rating)))
+        label(for=rating) Amber
+        input(type="radio" id=rating value="Green" name="rag[rating]" checked=(rag.includes(rating)))
+        label(for=rating) Green
+
+    input(type="submit" value="Save →" class="button")

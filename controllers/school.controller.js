@@ -117,7 +117,6 @@ exports.updateSchool = async (req, res) => {
 
 exports.editRag = async (req, res) => {
 	const school = await School.findOne({ _id: req.params.id });
-
 	res.render('editRag', {
 		title: `Update ${school.name}'s RAG Rating`,
 		school,
@@ -125,10 +124,22 @@ exports.editRag = async (req, res) => {
 };
 
 exports.updateRag = async (req, res) => {
+	const newDate = Date.now;
+	const newRating = req.body.rag;
+	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },
-		{ $push: { rag: req.body.rag } }
+		{
+			$push: {
+				rag: {
+					date: newDate,
+					rating: newRating,
+				},
+			},
+		},
+		{ $upsert: true, new: true }
 	).exec();
+	// console.log(req.body.rag, 'pushed');
 	req.flash(
 		'success',
 		`successfully updated <strong>${school.name}'s RAG rating</strong><a href="/school/${school.slug}">View School =></a>`

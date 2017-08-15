@@ -1,20 +1,9 @@
 extends layout
 
+include mixins/_ragForm
+
 block content
   h2= title
-  
-  form(action=`/school/add/${school._id || ''}` method="POST" class="card"
-    enctype="multipart/form-data")
-    input.hidden(type="text" id="address" name="location[address]" value=(store.location && store.location.address)) 
-    - const rag = (school.rag && school.rag.rating) || []
-    ul.tags
-      //- each rating in ratings
-      .tag.tag__choice
-        input(type="radio" id=rating value="Red" name="rag[rating]" checked=(rag.includes(rating)))
-        label(for=rating) Red
-        input(type="radio" id=rating value="Orange" name="rag[rating]" checked=(rag.includes(rating)))
-        label(for=rating) Amber
-        input(type="radio" id=rating value="Green" name="rag[rating]" checked=(rag.includes(rating)))
-        label(for=rating) Green
 
-    input(type="submit" value="Save →" class="button")
+  +ragForm(school)
+  

@@ -22,7 +22,7 @@ mixin schoolForm(school = {})
         .tag.tag__choice
           input(type="checkbox" id=form value=form name="form" checked=(forms.includes(form)))
           label(for=form) #{form}
-    //- - const ratings = ['Red', 'Amber', 'Green']
+    - const ratings = ['Red', 'Amber', 'Green']
     - const rag = (school.rag && school.rag.rating) || []
     ul.tags
       //- each rating in ratings

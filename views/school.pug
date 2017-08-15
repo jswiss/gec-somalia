@@ -25,12 +25,6 @@ block content
           li.tag
             a.tag__link(href=`/tags/${tag}`)
               span.tag__text #{tag}
-
-  if school.forms
-      .forms
-        each f in school.forms
-          .form
-            +form(f)
             
   if school.teachers
     .teachers
