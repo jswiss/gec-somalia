@@ -1,0 +1,9 @@
+extends layout
+
+include mixins/_table
+
+block content
+  .inner
+    h2= title
+    .schools__table
+      +table(schools)

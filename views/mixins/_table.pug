@@ -1,0 +1,10 @@
+mixin table(school = {})
+
+  table
+    thead
+      tr
+        th Test
+    tbody
+      each school in schools
+        tr
+          td= school.name

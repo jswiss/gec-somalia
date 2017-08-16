@@ -1,29 +1,9 @@
-//- mixin schoolCard({school = {}})
-//-   .school
-//-     .school__hero
-//-       .school__actions
-//-         if user && school.author.equals(user._id)
-//-           .school__action.school__action--edit
-//-             a(href=`/schools/${school._id}/edit`)
-//-               != h.icon('pencil')
-//-       img(src=`/uploads/${school.photo || 'school.png'}`)
-//-       h2.title
-//-         a(href=`/school/${school.slug}`) #{school.name}
-//-     .school__details
-//-       p Village:
-      //-  p= school.location.village
-//- Add details about number of students and HT here
-
 mixin schoolCard(school = {})
   .school
     .school__hero
       .school__actions
         //- if a user is logged in, show the heart
         //- if user
-        .school__action.school__action--rag
-          //- good to use form tag in case JS fails
-          a(href=`/schools/${school._id}/edit/rag`)
-            != h.icon('caution')
         //- if user && school.author.equals(user._id)
         .school__action.school__action--edit
           a(href=`/schools/${school._id}/edit`)
@@ -42,6 +22,18 @@ mixin schoolCard(school = {})
             span= school.students.length
             
       img(src=`/uploads/${school.photo || 'school.png'}`)
+      //- .school__action.school__action--red
+      //-   form.red(method="POST" action=`/api/v1/schools/${school._id}/rag`)
+      //-     button.rag__button(type="submit" name="red" class="ragClass")
+      //-       != h.icon('red')
+      //- .school__action.school__action--amber
+      //-   form.red(method="POST" action=`/api/v1/schools/${school._id}/rag`)
+      //-     button.rag__button(type="submit" name="amber" class="ragClass")
+      //-       != h.icon('amber')
+      //- .school__action.school__action--green
+      //-   form.red(method="POST" action=`/api/v1/schools/${school._id}/rag`)
+      //-     button.rag__button(type="submit" name="green" class="ragClass")
+            != h.icon('green')
       h2.title
         a(href=`/school/${school.slug}`) #{school.name}
     //- .school__details

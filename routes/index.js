@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const schoolController = require('../controllers/school.controller');
-// const formController = require('../controllers/form.controller');
+const ragController = require('../controllers/rag.controller');
 // const userController = require('../controllers/user.controller');
 // const authController = require('../controllers/auth.controller');
 const studentController = require('../controllers/student.controller');
@@ -11,7 +11,7 @@ const teacherController = require('../controllers/teacher.controller');
 // handling function
 const { catchErrors } = require('../handlers/errorHandlers');
 
-router.get('/', catchErrors(schoolController.getSchools));
+// router.get('/', catchErrors(schoolController.getSchools));
 router.get('/schools', catchErrors(schoolController.getSchools));
 router.get('/school/:slug', catchErrors(schoolController.getSchoolBySlug));
 
@@ -44,11 +44,14 @@ router.get('/map', schoolController.mapPage);
 router.get('/api/v1/search', catchErrors(schoolController.searchSchools));
 router.get('/api/v1/schools/map', catchErrors(schoolController.mapSchools));
 
-// Form stuff
-// router.post('/forms/:id', catchErrors(formController.addForm));
+// RAG stuff
+router.post('/forms/:id', catchErrors(ragController.addRag));
 
 // Teacher stuff
 router.post('/teachers/:id', catchErrors(teacherController.addTeacher));
+
+// Table stuff
+router.get('/', catchErrors(schoolController.schoolTable));
 
 // TODO: Student stuff
 router.get(

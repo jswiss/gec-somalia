@@ -24,6 +24,7 @@ require('./models/School');
 require('./models/Student');
 require('./models/Teacher');
 require('./models/User');
+require('./models/Rag');
 // require('./models/Form');
 
 // Start our app!

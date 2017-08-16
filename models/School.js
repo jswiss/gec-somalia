@@ -104,18 +104,6 @@ const schoolSchema = new mongoose.Schema(
 			required: 'Every school must have a project',
 			enum: ['SOMGEP', 'EGEP'],
 		},
-		rag: [
-			{
-				date: {
-					type: Date,
-					default: Date.now,
-				},
-				rating: {
-					type: String,
-					enum: ['Red', 'Orange', 'Green'],
-				},
-			},
-		],
 		// project activities here
 		tags: [String],
 		// TODO: create an enum list for allowable tags
@@ -210,14 +198,6 @@ schoolSchema.statics.getTagsList = function() {
 	]);
 };
 
-// schoolSchema.virtual('forms', {
-// 	// mongoose to query Form model
-// 	ref: 'Form',
-// 	// find matching school _id and school field in Review
-// 	localField: '_id',
-// 	foreignField: 'school',
-// });
-
 schoolSchema.virtual('teachers', {
 	ref: 'Teacher',
 	localField: '_id',
@@ -230,10 +210,17 @@ schoolSchema.virtual('students', {
 	foreignField: 'currentSchool',
 });
 
+schoolSchema.virtual('ragRatings', {
+	ref: 'Rag',
+	localField: '_id',
+	foreignField: 'school',
+});
+
 function autopopulate(next) {
 	// this.populate('forms');
 	this.populate('students');
 	this.populate('teachers');
+	this.populate('ragRatings');
 	next();
 }
 

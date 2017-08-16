@@ -129,20 +129,21 @@ exports.updateRag = async (req, res) => {
 	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },
-		{
-			$push: {
-				rag: {
-					date: newDate,
-					rating: newRating,
-				},
-			},
-		},
-		{ $upsert: true, new: true }
+		// {
+		// 	$push: {
+		// 		rag: {
+		// 			date: newDate,
+		// 			rating: newRating,
+		// 		},
+		// 	},
+		// },
+		// { new: true },
+		console.log(req.body.rag, 'pushed'),
+		school.rag.push({ date: newDate, rating: newRating })
 	).exec();
-	// console.log(req.body.rag, 'pushed');
 	req.flash(
 		'success',
-		`successfully updated <strong>${school.name}'s RAG rating</strong><a href="/school/${school.slug}">View School =></a>`
+		`successfully updated <strong>${school.name}'s RAG rating</strong><a href="/school/${school.slug}"><br>  View School =></a>`
 	);
 	res.redirect(`/schools`);
 };
@@ -184,4 +185,14 @@ exports.mapSchools = async (req, res) => {
 		'slug name location photo rag project markerColor'
 	);
 	res.json(schools);
+};
+
+// table stuff
+exports.schoolTable = async (req, res) => {
+	const schools = await School.find();
+
+	res.render('tables', {
+		title: 'School Table',
+		schools,
+	});
 };
