@@ -1,10 +1,23 @@
 mixin table(school = {})
 
-  table
-    thead
+ table#pickle.table.table-hover.table-striped.table-bordered
+  thead
+    tr
+      tr Name
+      tr Village
+      tr Count
+      tr RAG
+  tbody
+    each school in schools
       tr
-        th Test
-    tbody
-      each school in schools
-        tr
-          td= school.name
+        td= school.name
+        td= school.village
+        td= school.students.length
+        td
+          .switch-toggle.switch-3.switch-candy
+            input(id="red" name="state-d" type="radio" checked="")
+            label(for="red" onclick="") Red
+            input(id="orange" name="state-d" type="radio" checked="checked")
+            label(for="orange" onclick="") Amber
+            input(id="green" name="state-d" type="radio" checked="")
+            label(for="green" onclick="") Green

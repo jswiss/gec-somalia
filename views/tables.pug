@@ -1,9 +1,43 @@
 extends layout
 
-include mixins/_table
+//- include mixins/_table
 
 block content
   .inner
     h2= title
     .schools__table
-      +table(schools)
+      table#pickle.table.table-hover.table-striped.table-bordered
+        thead
+          tr
+            td Name
+            td Project
+            td Village
+            td Teacher Count
+            td Student Count
+            td RAG
+        tbody
+          each school in schools
+            tr
+              td
+                a(href=`/school/${school.slug}`) #{school.name}
+              td= school.project
+              td= school.location.village
+              td= school.teachers.length
+              td= school.students.length
+              td
+                .switch-toggle.switch-3.switch-candy
+                  input(id="red" name="state-d" type="radio" checked="")
+                  label(for="red" onclick="") Red
+                  input(id="orange" name="state-d" type="radio" checked="checked")
+                  label(for="orange" onclick="") Amber
+                  input(id="green" name="state-d" type="radio" checked="")
+                  label(for="green" onclick="") Green
+
+    script(src='https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css')
+    script(src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js')
+    script(src="http://code.jquery.com/jquery.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous")
+    script.
+      $(document).ready(function() {
+          $('#pickle').DataTable();
+      });
