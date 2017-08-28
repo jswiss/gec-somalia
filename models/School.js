@@ -139,6 +139,14 @@ const schoolSchema = new mongoose.Schema(
 			required: 'every school needs a type!',
 			enum: ['Primary', 'Secondary'],
 		},
+		rag: [
+			{
+				Date: {
+					default: Date.now,
+				},
+				rating: String,
+			},
+		],
 	},
 	{
 		// makes virtuals accessible as JSON or objects
@@ -217,17 +225,10 @@ schoolSchema.virtual('students', {
 	foreignField: 'currentSchool',
 });
 
-schoolSchema.virtual('ragRatings', {
-	ref: 'Rag',
-	localField: '_id',
-	foreignField: 'school',
-});
-
 function autopopulate(next) {
 	// this.populate('forms');
 	this.populate('students');
 	this.populate('teachers');
-	this.populate('ragRatings');
 	next();
 }
 

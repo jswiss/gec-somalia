@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const schoolController = require('../controllers/school.controller');
-const ragController = require('../controllers/rag.controller');
 // const userController = require('../controllers/user.controller');
 // const authController = require('../controllers/auth.controller');
 const studentController = require('../controllers/student.controller');
@@ -35,7 +34,7 @@ router.post(
 
 // Update RAG
 router.get('/schools/:id/edit/rag', catchErrors(schoolController.editRag));
-router.post('/school/add/:id', catchErrors(schoolController.updateRag));
+router.post('/', catchErrors(schoolController.updateRag));
 
 // map
 router.get('/map', schoolController.mapPage);
@@ -43,9 +42,6 @@ router.get('/map', schoolController.mapPage);
 // API Endpoints
 router.get('/api/v1/search', catchErrors(schoolController.searchSchools));
 router.get('/api/v1/schools/map', catchErrors(schoolController.mapSchools));
-
-// RAG stuff
-router.post('/forms/:id', catchErrors(ragController.addRag));
 
 // Teacher stuff
 router.post('/teachers/:id', catchErrors(teacherController.addTeacher));
