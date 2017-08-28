@@ -10,6 +10,7 @@ mixin schoolForm(school = {})
     select(type="select" name="project" value=school.project)
       option SOMGEP
       option EGEP
+    br
     label(for="type") Primary or Secondary?
     select(type="select" name="type" value=school.type)
       option Primary
@@ -28,6 +29,7 @@ mixin schoolForm(school = {})
       if school.photo
         img(src=`/uploads/${school.photo}` alt=school.name width=200)
     //- TODO: Cascade select here for state, region, and district
+    br
     label(for="address") Address
     input(type="text" id="address" name="location[address]" value=(school.location && school.location.address)) 
     label(for="lng") Address Longitude

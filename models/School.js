@@ -188,6 +188,13 @@ schoolSchema.pre('save', async function(next) {
 	// TODO: Make more resilient so slugs are unique
 });
 
+schoolSchema.pre('update', async function(next) {
+	this.markerColor = `http://maps.google.com/mapfiles/ms/icons/${this.rag[
+		this.rag.length - 1
+	].rating}-dot.png`.toLowerCase();
+	next();
+});
+
 //aggregator
 schoolSchema.statics.getTagsList = function() {
 	// no arrow function so we can access 'this'
