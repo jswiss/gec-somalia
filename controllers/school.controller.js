@@ -4,6 +4,8 @@ const User = mongoose.model('User');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
+const events = require('events');
+const ragChange = new events.EventEmitter();
 
 const multerOptions = {
 	storage: multer.memoryStorage(),
@@ -116,6 +118,9 @@ exports.updateSchool = async (req, res) => {
 };
 
 exports.editRag = async (req, res) => {
+	ragChange.on('click', function(a, b) {
+		console.log(a, b, this);
+	});
 	const school = await School.findOne({ _id: req.params.id });
 	res.render('editRag', {
 		title: `Update ${school.name}'s RAG Rating`,
@@ -124,20 +129,25 @@ exports.editRag = async (req, res) => {
 };
 
 exports.updateRag = async (req, res) => {
+	const ragChange = new ragChange();
+	ragChange.on('click', function(a, b) {
+		console.log(a, b, this);
+	});
 	const newDate = Date.now;
 	const newRating = req.body.rag;
 	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },
-		// {
-		// 	$push: {
-		// 		rag: {
-		// 			date: newDate,
-		// 			rating: newRating,
-		// 		},
-		// 	},
-		// },
-		// { new: true },
+		{
+			$push: {
+				rag: [
+					{
+						$each: [{ date: newDate, rating: newRating }],
+					},
+				],
+			},
+		},
+		{ new: true },
 		console.log(req.body.rag, 'pushed'),
 		school.rag.push({ date: newDate, rating: newRating })
 	).exec();

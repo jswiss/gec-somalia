@@ -141,7 +141,8 @@ const schoolSchema = new mongoose.Schema(
 		},
 		rag: [
 			{
-				Date: {
+				date: {
+					type: Date,
 					default: Date.now,
 				},
 				rating: String,

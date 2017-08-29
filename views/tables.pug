@@ -25,19 +25,11 @@ block content
               td= school.teachers.length
               td= school.students.length
               td
-                .switch-toggle.switch-3.switch-candy
-                  input(id="red" name="state-d" type="radio" checked="")
-                  label(for="red" onclick="") Red
-                  input(id="orange" name="state-d" type="radio" checked="checked")
-                  label(for="orange" onclick="") Amber
-                  input(id="green" name="state-d" type="radio" checked="")
-                  label(for="green" onclick="") Green
-
-    script(src='https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css')
-    script(src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js')
-    script(src="http://code.jquery.com/jquery.js")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous")
-    script.
-      $(document).ready(function() {
-          $('#pickle').DataTable();
-      });
+                //- .switch-toggle.switch-3.switch-candy
+                .rag__radios
+                  input(id="red" name="rag" type="radio" value="red")
+                  label(for="red") Red
+                  input(id="orange" name="rag" type="radio" value="orange")
+                  label(for="orange") Amber
+                  input(id="green" name="rag" type="radio" value="green")
+                  label(for="green") Green
