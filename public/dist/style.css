@@ -710,8 +710,26 @@ label {
   .table tr:nth-child(odd):not(:first-child) {
     background: #f7f7f7; }
   .table thead tr {
-    background: #303030;
+    background: black;
     color: white; }
+
+.green {
+  background: green; }
+
+.red {
+  background: red; }
+
+.amber {
+  background: orange; }
+
+.Green {
+  background: green; }
+
+.Red {
+  background: red; }
+
+.Amber {
+  background: orange; }
 
 .schools {
   display: -ms-flexbox;
