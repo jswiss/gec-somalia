@@ -4,7 +4,7 @@ import { $, $$ } from './modules/bling';
 import autocomplete from './modules/autocomplete';
 import typeAhead from './modules/typeAhead';
 import makeMap from './modules/map';
-import rag from './modules/rag';
+// import rag from './modules/rag';
 
 autocomplete(
 	$('#address'),
@@ -18,4 +18,4 @@ typeAhead($('.search'));
 
 makeMap($('#map'));
 
-rag($('.rag__radios'));
+// rag($('.rag__radios'));

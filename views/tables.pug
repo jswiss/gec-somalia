@@ -17,6 +17,8 @@ block content
             td RAG
         tbody
           each school in schools
+            - const rag = school.rag || []
+            - const lastRating = rag[rag.length - 1] ||[]
             tr
               td
                 a(href=`/school/${school.slug}`) #{school.name}
@@ -24,12 +26,4 @@ block content
               td= school.location.village
               td= school.teachers.length
               td= school.students.length
-              td
-                //- .switch-toggle.switch-3.switch-candy
-                .rag__radios
-                  input(id="red" name="rag" type="radio" value="red")
-                  label(for="red") Red
-                  input(id="orange" name="rag" type="radio" value="orange")
-                  label(for="orange") Amber
-                  input(id="green" name="rag" type="radio" value="green")
-                  label(for="green") Green
+              td= lastRating.rating
