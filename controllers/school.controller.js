@@ -118,12 +118,8 @@ exports.updateSchool = async (req, res, err) => {
 			type: req.body.type,
 			forms: req.body.forms,
 			photo: req.body.photo,
-			location: {
-				address: req.body.location.address,
-				village: req.body.location.village,
-				district: req.body.location.district,
-			},
 			tags: req.body.tags,
+			location: req.body.location,
 		},
 		{ new: true, runValidators: true }
 	).exec();
