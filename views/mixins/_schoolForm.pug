@@ -11,6 +11,15 @@ mixin schoolForm(school = {})
       option SOMGEP
       option EGEP
     br
+    - const ragChoices = ['Red', 'Amber', 'Green']
+    - const rag = school.rag || []
+    - const lastRag = rag[rag.length - 1] ||[]
+    - const lastRating = lastRag.rating
+    ul.tags
+      each rag in ragChoices
+        .tag.tag__choice
+          input(type="radio" id=rag value=rag name="rag" checked=(lastRating === rag))
+          label(for=rag) #{rag}
     label(for="type") Primary or Secondary?
     select(type="select" name="type" value=school.type)
       option Primary
