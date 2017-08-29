@@ -103,11 +103,39 @@ exports.editSchool = async (req, res) => {
 	});
 };
 
-exports.updateSchool = async (req, res) => {
+exports.updateSchool = async (req, res, err) => {
+	if (err) console.error;
+	const newDate = Date.now;
+	const newRating = req.body.rag;
+
 	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },
-		req.body,
+		{
+			name: req.body.name,
+			code: req.body.code,
+			project: req.body.project,
+			type: req.body.type,
+			forms: req.body.forms,
+			photo: req.body.photo,
+			location: {
+				address: req.body.location.address,
+				village: req.body.location.village,
+				district: req.body.location.district,
+			},
+			tags: req.body.tags,
+		},
+		{ new: true, runValidators: true }
+	).exec();
+	const rag = await School.findOneAndUpdate(
+		{ _id: req.params.id },
+		{
+			$push: {
+				rag: {
+					rating: req.body.rag,
+				},
+			},
+		},
 		{ new: true, runValidators: true }
 	).exec();
 	req.flash(
@@ -128,35 +156,35 @@ exports.editRag = async (req, res) => {
 	});
 };
 
-exports.updateRag = async (req, res) => {
-	const ragChange = new ragChange();
-	ragChange.on('click', function(a, b) {
-		console.log(a, b, this);
-	});
-	const newDate = Date.now;
-	const newRating = req.body.rag;
-	req.body.location.type = 'Point';
-	const school = await School.findOneAndUpdate(
-		{ _id: req.params.id },
-		{
-			$push: {
-				rag: [
-					{
-						$each: [{ date: newDate, rating: newRating }],
-					},
-				],
-			},
-		},
-		{ new: true },
-		console.log(req.body.rag, 'pushed'),
-		school.rag.push({ date: newDate, rating: newRating })
-	).exec();
-	req.flash(
-		'success',
-		`successfully updated <strong>${school.name}'s RAG rating</strong><a href="/school/${school.slug}"><br>  View School =></a>`
-	);
-	res.redirect(`/schools`);
-};
+// exports.updateRag = async (req, res) => {
+// 	const ragChange = new ragChange();
+// 	ragChange.on('click', function(a, b) {
+// 		console.log(a, b, this);
+// 	});
+// 	const newDate = Date.now;
+// 	const newRating = req.body.rag;
+// 	req.body.location.type = 'Point';
+// 	const school = await School.findOneAndUpdate(
+// 		{ _id: req.params.id },
+// 		{
+// 			$push: {
+// 				rag: [
+// 					{
+// 						$each: [{ date: newDate, rating: newRating }],
+// 					},
+// 				],
+// 			},
+// 		},
+// 		{ new: true },
+// 		console.log(req.body.rag, 'pushed'),
+// 		school.rag.push({ date: newDate, rating: newRating })
+// 	).exec();
+// 	req.flash(
+// 		'success',
+// 		`successfully updated <strong>${school.name}'s RAG rating</strong><a href="/school/${school.slug}"><br>  View School =></a>`
+// 	);
+// 	res.redirect(`/schools`);
+// };
 
 exports.upload = multer(multerOptions).single('photo');
 

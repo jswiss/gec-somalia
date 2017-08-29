@@ -30,7 +30,7 @@ mixin schoolForm(school = {})
     ul.tags
       each form in formChoices
         .tag.tag__choice
-          input(type="checkbox" id=form value=form name="form" checked=(forms.includes(form)))
+          input(type="checkbox" id=form value=form name="forms" checked=(forms.includes(form)))
           label(for=form) #{form}
     //- image upload
     label(for="upload") Photo

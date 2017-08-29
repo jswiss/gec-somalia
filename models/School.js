@@ -180,10 +180,12 @@ schoolSchema.pre('save', async function(next) {
 		next(); // skip it
 		return; // stop this function from running
 	}
-
-	this.markerColor = `http://maps.google.com/mapfiles/ms/icons/${this.rag[
-		this.rag.length - 1
-	].rating}-dot.png`.toLowerCase();
+	const latestRating = this.rag[this.rat.length - 1].rating;
+	if (latestRating === 'Orange') {
+		this.markerColor = `http://maps.google.com/mapfiles/ms/icons/orange-dot.png`;
+	} else {
+		this.markerColor = `http://maps.google.com/mapfiles/ms/icons/${latestRating}-dot.png`.toLowerCase();
+	}
 	// this requires a real function
 	this.slug = slug(this.name);
 	// check if the slug is unique
@@ -198,10 +200,12 @@ schoolSchema.pre('save', async function(next) {
 });
 
 schoolSchema.pre('update', async function(next) {
-	this.markerColor = `http://maps.google.com/mapfiles/ms/icons/${this.rag[
-		this.rag.length - 1
-	].rating}-dot.png`.toLowerCase();
-	next();
+	const latestRating = this.rag[this.rat.length - 1].rating;
+	if (latestRating === 'Orange') {
+		this.markerColor = `http://maps.google.com/mapfiles/ms/icons/orange-dot.png`;
+	} else {
+		this.markerColor = `http://maps.google.com/mapfiles/ms/icons/${latestRating}-dot.png`.toLowerCase();
+	}
 });
 
 //aggregator

@@ -32,10 +32,6 @@ router.post(
 	catchErrors(schoolController.updateSchool)
 );
 
-// Update RAG
-router.get('/schools/:id/edit/rag', catchErrors(schoolController.editRag));
-router.post('/', catchErrors(schoolController.updateRag));
-
 // map
 router.get('/map', schoolController.mapPage);
 

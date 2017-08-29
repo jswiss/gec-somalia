@@ -5,9 +5,10 @@
 		"project": "SOMGEP",
 		"name": "Torp, Conroy and Douglas",
 		"code": "TCaD",
+		"photo": "school1.png",
 		"rag": [
-			{ "date": "8/9/2017", "rating": "red" },
-			{ "date": "9/23/2017", "rating": "green" }
+			{ "date": "8/9/2017", "rating": "Red" },
+			{ "date": "9/23/2017", "rating": "Green" }
 		],
 		"forms": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
 		"type": "Primary",
@@ -27,9 +28,10 @@
 		"project": "SOMGEP",
 		"name": "Fay, Bailey and Pollich",
 		"code": "FBaP",
+		"photo": "school1.png",
 		"rag": [
-			{ "date": "8/11/2017", "rating": "orange" },
-			{ "date": "10/10/2017", "rating": "orange" }
+			{ "date": "8/11/2017", "rating": "Amber" },
+			{ "date": "10/10/2017", "rating": "Amber" }
 		],
 		"forms": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
 		"type": "Primary",
@@ -49,7 +51,8 @@
 		"project": "SOMGEP",
 		"name": "Ondricka and Sons Secondary",
 		"code": "OaS",
-		"rag": [{ "date": "8/18/2017", "rating": "orange" }],
+		"photo": "school1.png",
+		"rag": [{ "date": "8/18/2017", "rating": "Amber" }],
 		"forms": ["s1", "s2", "s3", "s4"],
 		"type": "Secondary",
 		"markerColor": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
@@ -68,9 +71,10 @@
 		"project": "SOMGEP",
 		"name": "Will-Hartmann",
 		"code": "W",
+		"photo": "school2.png",
 		"rag": [
-			{ "date": "7/26/2017", "rating": "orange" },
-			{ "date": "8/19/2017", "rating": "red" }
+			{ "date": "7/26/2017", "rating": "Amber" },
+			{ "date": "8/19/2017", "rating": "Red" }
 		],
 		"forms": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
 		"type": "Primary",
@@ -90,11 +94,12 @@
 		"project": "SOMGEP",
 		"name": "Keebler-Tillman",
 		"code": "K",
+		"photo": "school2.png",
 		"rag": [
-			{ "date": "10/23/2017", "rating": "green" },
-			{ "date": "10/5/2017", "rating": "orange" },
-			{ "date": "8/3/2017", "rating": "red" },
-			{ "date": "9/28/2017", "rating": "green" }
+			{ "date": "10/23/2017", "rating": "Green" },
+			{ "date": "10/5/2017", "rating": "Amber" },
+			{ "date": "8/3/2017", "rating": "Red" },
+			{ "date": "9/28/2017", "rating": "Green" }
 		],
 		"forms": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
 		"type": "Primary",
