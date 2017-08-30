@@ -28,6 +28,7 @@ router.get('/schools/:id/edit', catchErrors(schoolController.editSchool));
 router.post(
 	'/school/add/:id',
 	schoolController.upload,
+	// catchErrors(schoolController.updateRag),
 	catchErrors(schoolController.resize),
 	catchErrors(schoolController.updateSchool)
 );

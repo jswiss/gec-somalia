@@ -3,6 +3,7 @@ mongoose.Promise = global.Promise;
 // allows us to make url-friendly names
 const slug = require('slugs');
 const timestamps = require('mongoose-timestamp');
+const Rag = require('./Rag');
 
 const schoolSchema = new mongoose.Schema(
 	{
@@ -139,6 +140,7 @@ const schoolSchema = new mongoose.Schema(
 			required: 'every school needs a type!',
 			enum: ['Primary', 'Secondary'],
 		},
+		// rag: [Rag],
 		rag: [
 			{
 				date: {
@@ -180,7 +182,7 @@ schoolSchema.pre('save', async function(next) {
 		next(); // skip it
 		return; // stop this function from running
 	}
-	const latestRating = this.rag[this.rat.length - 1].rating;
+	const latestRating = this.rag[this.rag.length - 1].rating;
 	if (latestRating === 'Orange') {
 		this.markerColor = `http://maps.google.com/mapfiles/ms/icons/orange-dot.png`;
 	} else {

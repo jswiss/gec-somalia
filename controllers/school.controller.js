@@ -4,8 +4,6 @@ const User = mongoose.model('User');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
-const events = require('events');
-const ragChange = new events.EventEmitter();
 
 const multerOptions = {
 	storage: multer.memoryStorage(),
@@ -147,47 +145,6 @@ exports.updateSchool = async (req, res, err) => {
 	res.redirect(`/schools/${school._id}/edit`);
 };
 
-exports.editRag = async (req, res) => {
-	ragChange.on('click', function(a, b) {
-		console.log(a, b, this);
-	});
-	const school = await School.findOne({ _id: req.params.id });
-	res.render('editRag', {
-		title: `Update ${school.name}'s RAG Rating`,
-		school,
-	});
-};
-
-// exports.updateRag = async (req, res) => {
-// 	const ragChange = new ragChange();
-// 	ragChange.on('click', function(a, b) {
-// 		console.log(a, b, this);
-// 	});
-// 	const newDate = Date.now;
-// 	const newRating = req.body.rag;
-// 	req.body.location.type = 'Point';
-// 	const school = await School.findOneAndUpdate(
-// 		{ _id: req.params.id },
-// 		{
-// 			$push: {
-// 				rag: [
-// 					{
-// 						$each: [{ date: newDate, rating: newRating }],
-// 					},
-// 				],
-// 			},
-// 		},
-// 		{ new: true },
-// 		console.log(req.body.rag, 'pushed'),
-// 		school.rag.push({ date: newDate, rating: newRating })
-// 	).exec();
-// 	req.flash(
-// 		'success',
-// 		`successfully updated <strong>${school.name}'s RAG rating</strong><a href="/school/${school.slug}"><br>  View School =></a>`
-// 	);
-// 	res.redirect(`/schools`);
-// };
-
 exports.upload = multer(multerOptions).single('photo');
 
 exports.resize = async (req, res, next) => {
@@ -208,12 +165,18 @@ exports.resize = async (req, res, next) => {
 // use ASYNC any time we query the database
 exports.createSchool = async (req, res) => {
 	// req.body.author = req.user._id;
-	const school = await new School(req.body).save();
+	const rating = req.body.rag;
+	delete req.body.rag;
+	const school = await new School(req.body);
+	school.rag.push({ rating: rating });
+	school.save(function(err) {
+		if (err) console.log(err);
+	});
 	req.flash(
 		'success',
 		`successfully created <strong>${school.name}</strong>! Want to add <a href="/school/${school.slug}/teachers/add">teacher</a>, or <a href="/school/${school.slug}/students/add">student</a> info?`
 	);
-	res.redirect(`/school/${school.slug}`);
+	await res.redirect(`/school/add`);
 };
 
 exports.mapPage = (req, res) => {
