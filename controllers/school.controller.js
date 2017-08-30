@@ -167,16 +167,17 @@ exports.createSchool = async (req, res) => {
 	// req.body.author = req.user._id;
 	const rating = req.body.rag;
 	delete req.body.rag;
+
 	const school = await new School(req.body);
-	school.rag.push({ rating: rating });
-	school.save(function(err) {
+	await school.rag.push({ rating: rating });
+	await school.save(function(err) {
 		if (err) console.log(err);
 	});
 	req.flash(
 		'success',
 		`successfully created <strong>${school.name}</strong>! Want to add <a href="/school/${school.slug}/teachers/add">teacher</a>, or <a href="/school/${school.slug}/students/add">student</a> info?`
 	);
-	await res.redirect(`/school/add`);
+	res.redirect(`/school/${school.slug}`);
 };
 
 exports.mapPage = (req, res) => {
