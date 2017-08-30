@@ -158,6 +158,11 @@ const schoolSchema = new mongoose.Schema(
 
 schoolSchema.plugin(timestamps);
 
+// index location
+schoolSchema.index({
+	location: '2dsphere',
+});
+
 // MongoDB indexing always happens in Schema
 schoolSchema.index({
 	name: 'text', // we tell MongoDB what we'd like to index fields as. in this case, 'text'
@@ -167,11 +172,6 @@ schoolSchema.index({
 
 schoolSchema.index({
 	'location.village': 'text',
-});
-
-// index location
-schoolSchema.index({
-	location: '2dsphere',
 });
 
 // Pre-save hook in MongoDB to auto create a slug

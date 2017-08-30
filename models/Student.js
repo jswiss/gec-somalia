@@ -79,9 +79,18 @@ studentSchema.pre('save', async function(next) {
 		return; // stop this function from running
 	}
 	// this requires a real function
-	this.initials = this.name.match(/\b\w/g).join('').toUpperCase();
-	this.fatherInitials = this.fatherName.match(/\b\w/g).join('').toUpperCase();
-	this.motherInitials = this.motherName.match(/\b\w/g).join('').toUpperCase();
+	this.initials = this.name
+		.match(/\b\w/g)
+		.join('')
+		.toUpperCase();
+	this.fatherInitials = this.fatherName
+		.match(/\b\w/g)
+		.join('')
+		.toUpperCase();
+	this.motherInitials = this.motherName
+		.match(/\b\w/g)
+		.join('')
+		.toUpperCase();
 	this.slug = slug(
 		`${this.birthdate}_${this.initials}_${this.motherInitials}_${this
 			.fatherInitials}`
@@ -96,5 +105,7 @@ studentSchema.pre('save', async function(next) {
 	next();
 	// TODO: Make more resilient so slugs are unique
 });
+
+// TODO: populate virtuals for inputs
 
 module.exports = mongoose.model('Student', studentSchema);

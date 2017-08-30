@@ -4,6 +4,7 @@ extends layout
 //- include mixins/_formForm
 //- include mixins/_teacherForm
 include mixins/_teacher
+include mixins/_input
 //- include mixins/_studentForm
 //- include mixins/_review
 
@@ -31,3 +32,8 @@ block content
       each t in school.teachers
         .teachers
           +teacher(t)
+  if school.inputs
+    .inputs
+      each i in school.inputs
+        .inputs
+          +input(i)

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // allows us to make url-friendly names
-const slug = require('slugs');
 const timestamps = require('mongoose-timestamp');
 
 const inputSchema = new mongoose.Schema({
@@ -35,7 +34,7 @@ const inputSchema = new mongoose.Schema({
 		type: Number,
 		required: 'Please provide a quantity',
 	},
-	value: {
+	valueSent: {
 		type: Number,
 		required: 'Please provide an estimated monetary value in GBP',
 	},
