@@ -107,13 +107,19 @@ exports.updateSchool = async (req, res, err) => {
 	if (err) console.error;
 	const newDate = Date.now;
 	const newRating = req.body.rag;
-
+	let markerColor = newRating.toLowerCase();
+	console.log(markerColor);
+	if (markerColor === 'amber') {
+		markerColor = 'orange';
+	}
+	// TODO: update marker color here!
 	req.body.location.type = 'Point';
 	const school = await School.findOneAndUpdate(
 		{ _id: req.params.id },
 		{
 			name: req.body.name,
 			code: req.body.code,
+			markerColor: `http://maps.google.com/mapfiles/ms/icons/${markerColor}-dot.png`,
 			project: req.body.project,
 			type: req.body.type,
 			forms: req.body.forms,

@@ -206,6 +206,7 @@ schoolSchema.pre('update', async function(next) {
 	} else {
 		this.markerColor = `http://maps.google.com/mapfiles/ms/icons/${latestRating}-dot.png`.toLowerCase();
 	}
+	next();
 });
 
 //aggregator
