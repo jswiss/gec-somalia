@@ -12,9 +12,35 @@ block content
   //- pre= h.dump(school)
   .single
     .single__hero
+
       img.single__image(src=`/uploads/${school.photo || 'school.png'}`)
+      .school__actions
+        //- if a user is logged in, show the heart
+        //- if user
+        //- if user && school.author.equals(user._id)
+        .school__action.school__action--edit
+          a(href=`/schools/${school._id}/edit`)
+            != h.icon('pencil')
+
+        if school.teachers
+          .school__action.school__action--teacher
+            a(href=`/schools/${school._id}/edit/teachers`)
+              != h.icon('teacher')
+            span= school.teachers.length
+
+        if school.students
+          .school__action.school__action--count
+            a(href=`/schools/${school._id}/edit/students`)
+              != h.icon('student')
+            span= school.students.length
+        if school.inputs
+          .school__action.school__action--count
+            a(href=`/schools/${school._id}/edit/inputs`)
+              != h.icon('input')
+            span= school.inputs.length
       h2.title.title--single
         a(href=`/schools/${school.slug}`) #{school.name}
+      
 
   .single__details.inner
     img.single__map(src=h.staticMap(school.location.coordinates))
