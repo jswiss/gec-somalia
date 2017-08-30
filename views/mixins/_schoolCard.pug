@@ -20,6 +20,11 @@ mixin schoolCard(school = {})
             a(href=`/schools/${school._id}/edit/students`)
               != h.icon('student')
             span= school.students.length
+        if school.inputs
+          .school__action.school__action--count
+            a(href=`/schools/${school._id}/edit/inputs`)
+              != h.icon('input')
+            span= school.inputs.length
             
       img(src=`/uploads/${school.photo || 'school.png'}`)
       //- .school__action.school__action--red
