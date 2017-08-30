@@ -140,7 +140,6 @@ const schoolSchema = new mongoose.Schema(
 			required: 'every school needs a type!',
 			enum: ['Primary', 'Secondary'],
 		},
-		// rag: [Rag],
 		rag: [
 			{
 				date: {
