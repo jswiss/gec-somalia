@@ -5,6 +5,7 @@ const schoolController = require('../controllers/school.controller');
 // const authController = require('../controllers/auth.controller');
 const studentController = require('../controllers/student.controller');
 const teacherController = require('../controllers/teacher.controller');
+const inputController = require('../controllers/input.controller');
 
 // if you don't wrap async/await in try/catch, has to be wrapped in error
 // handling function
@@ -28,7 +29,6 @@ router.get('/schools/:id/edit', catchErrors(schoolController.editSchool));
 router.post(
 	'/school/add/:id',
 	schoolController.upload,
-	// catchErrors(schoolController.updateRag),
 	catchErrors(schoolController.resize),
 	catchErrors(schoolController.updateSchool)
 );
