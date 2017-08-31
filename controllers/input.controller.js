@@ -34,3 +34,11 @@ exports.resize = async (req, res, next) => {
 	// once we have written the photo to our filesystem, keep going!
 	next();
 };
+
+exports.editInputs = async (req, res) => {
+	const school = await School.findOne({ _id: req.params.id });
+	res.render('inputForm', {
+		title: `${school.name}'s Inputs`,
+		school,
+	});
+};

@@ -46,6 +46,10 @@ router.post('/teachers/:id', catchErrors(teacherController.addTeacher));
 // Table stuff
 router.get('/', catchErrors(schoolController.schoolTable));
 
+// input stuff
+router.get('/schools/:id/edit/inputs', inputController.editInputs);
+// router.post();
+
 // TODO: Student stuff
 router.get(
 	'/school/:slug/form/:form/students/:date',
