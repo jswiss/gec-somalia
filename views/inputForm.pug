@@ -5,14 +5,23 @@ block content
 
   - const inputs = school.inputs
   - const columns = ['Date', 'Student', 'Teacher', 'Type', 'Quantity Sent', 'Value Sent', 'Quantity Received', 'Value Received', 'Dispatched', 'Received', 'Description', 'Comments']
-    table.input__form
+    table.input__form.table.table-hover.table-striped.table-bordered
       thead
         tr
           each column in columns
             th= column
-    each i in inputs
-      span #{h.moment(i.date).format("YYMMDD")}
-      span= i.student
-      span= i.teacher
-      span= i.inputType
-      span= i.description
+      tbody
+        each i in inputs
+          tr
+            td #{h.moment(i.date).format("YYMMDD")}
+            td= i.student ? i.student.name : null
+            td= i.teacher ? i.teacher.name : null
+            td= i.inputType
+            td= i.quantitySent
+            td= i.valueSent
+            td= i.quantityReceived
+            td= i.valueReceived
+            td= i.dispatched
+            td= i.received
+            td= i.description
+            td= i.receiverComments
