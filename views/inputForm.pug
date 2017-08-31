@@ -11,7 +11,7 @@ block content
           each column in columns
             th= column
     each i in inputs
-      span= i.date
+      span #{h.moment(i.date).format("YYMMDD")}
       span= i.student
       span= i.teacher
       span= i.inputType
