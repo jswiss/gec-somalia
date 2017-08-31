@@ -86,4 +86,10 @@ teacherSchema.statics.getTagsList = function() {
 	]);
 };
 
+teacherSchema.virtual('inputs', {
+	ref: 'Input',
+	localField: '_id',
+	foreignField: 'teacher',
+});
+
 module.exports = mongoose.model('Teacher', teacherSchema);

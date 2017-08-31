@@ -59,4 +59,14 @@ const inputSchema = new mongoose.Schema({
 
 inputSchema.plugin(timestamps);
 
+function autopopulate(next) {
+	this.populate('student');
+	this.populate('teacher');
+	// this.populate('school');
+	next();
+}
+
+inputSchema.pre('find', autopopulate);
+inputSchema.pre('findOne', autopopulate);
+
 module.exports = mongoose.model('Input', inputSchema);

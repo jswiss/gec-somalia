@@ -2,3 +2,17 @@ extends layout
 
 block content
   h2= title
+
+  - const inputs = school.inputs
+  - const columns = ['Date', 'Student', 'Teacher', 'Type', 'Quantity Sent', 'Value Sent', 'Quantity Received', 'Value Received', 'Dispatched', 'Received', 'Description', 'Comments']
+    table.input__form
+      thead
+        tr
+          each column in columns
+            th= column
+    each i in inputs
+      span= i.date
+      span= i.student
+      span= i.teacher
+      span= i.inputType
+      span= i.description

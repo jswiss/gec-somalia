@@ -106,6 +106,12 @@ studentSchema.pre('save', async function(next) {
 	// TODO: Make more resilient so slugs are unique
 });
 
+studentSchema.virtual('inputs', {
+	ref: 'Input',
+	localField: '_id',
+	foreignField: 'student',
+});
+
 // TODO: populate virtuals for inputs
 
 module.exports = mongoose.model('Student', studentSchema);
